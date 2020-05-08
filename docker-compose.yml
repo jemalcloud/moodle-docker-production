@@ -26,7 +26,7 @@ services:
     volumes:
       - ./moodle-data:/var/www/moodledata
       - ./moodle-code:/var/www/html
-
+      - ./moodle-3.8-apache/docker-entrypoint.sh:/usr/local/bin/docker-entrypoint.sh
   db:
     hostname: db
     container_name: db

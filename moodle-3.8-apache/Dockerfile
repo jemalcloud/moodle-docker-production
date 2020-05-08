@@ -5,6 +5,7 @@ LABEL MAINTAINER juanda <juandacorreo@gmail.com>
 ARG VERSION=3.8.2
 ARG MOOSH_VERSION=0.32
 ARG COMPOSER_VERSION=1.10.6
+ENV DOCKERIZE_VERSION v0.6.1
 
 VOLUME ["/var/moodledata"]
 EXPOSE 80
@@ -63,6 +64,11 @@ RUN	echo "Installing mooosh" && \
 		composer install -d /usr/src/moosh; \
 		ln -s /usr/src/moosh/moosh.php /usr/local/bin/moosh; \
 		rm moosh.tar.gz
+
+
+RUN curl -o dockerize.tar.gz -fSL "https://github.com/jwilder/dockerize/releases/download/${DOCKERIZE_VERSION}/dockerize-linux-amd64-${DOCKERIZE_VERSION}.tar.gz"; \
+    tar -xf dockerize.tar.gz -C /usr/local/bin; \
+    rm dockerize.tar.gz
 
 
 COPY moodle-config.php /usr/src/moodle/config.php

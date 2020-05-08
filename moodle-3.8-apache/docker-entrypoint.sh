@@ -76,9 +76,15 @@ if [[ "$1" == apache2* ]] || [ "$1" == php-fpm ]; then
 	# database
 
 	echo "Checking database status..."
+
+	#wait till is ready for connections
+	dockerize -wait tcp://db:3306 -timeout 20s
 	# prevent container exit by php return value
-	php /var/www/html/admin/cli/check_database_schema.php || :
+	set +e
+	php /var/www/html/admin/cli/check_database_schema.php
 	dbStatus=$?
+	set -e
+	echo dbStatus=$dbStatus
 	if [ $dbStatus  -eq 2 ]; then
 		echo >&2 "Creating database..."
 		php $PWD/admin/cli/install_database.php --lang="es" --adminuser="root" --adminpass="password" --adminemail="juandacorreo@gmail.com" --agree-license --fullname="Moodle prueba" --shortname="prueba"
@@ -87,6 +93,7 @@ if [[ "$1" == apache2* ]] || [ "$1" == php-fpm ]; then
 		echo >&2 "MOODLE DATABASE FOUND: SKIP CREATION"
 	else
 		echo >&2 "Could not install Moodle Database due to errors!"
+		#exit $dbStatus
 	fi
 
 	# install plugins via moosh, first upgrade list
@@ -95,7 +102,7 @@ if [[ "$1" == apache2* ]] || [ "$1" == php-fpm ]; then
 	cat /usr/src/plugins |sed '/^#/d'|sed '/^$/d' >/usr/src/plugins_filtered
 	cd /var/www/html
 	# execute plugin installation
-	while read in; do moosh plugin-install "$in"; done < /usr/src/plugins_filtered
+	while read in; do moosh plugin-install "$in" |bash; done < /usr/src/plugins_filtered
 fi
 
 exec "$@"
