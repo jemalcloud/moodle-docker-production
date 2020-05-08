@@ -83,8 +83,6 @@ if [[ "$1" == apache2* ]] || [ "$1" == php-fpm ]; then
 	set +e
 	php /var/www/html/admin/cli/check_database_schema.php
 	dbStatus=$?
-	set -e
-	echo dbStatus=$dbStatus
 	if [ $dbStatus  -eq 2 ]; then
 		echo >&2 "Creating database..."
 		php $PWD/admin/cli/install_database.php --lang="es" --adminuser="root" --adminpass="password" --adminemail="juandacorreo@gmail.com" --agree-license --fullname="Moodle prueba" --shortname="prueba"
@@ -102,7 +100,7 @@ if [[ "$1" == apache2* ]] || [ "$1" == php-fpm ]; then
 	cat /usr/src/plugins |sed '/^#/d'|sed '/^$/d' >/usr/src/plugins_filtered
 	cd /var/www/html
 	# execute plugin installation
-	while read in; do moosh plugin-install "$in" |bash; done < /usr/src/plugins_filtered
+	#while read in; do moosh plugin-install "$in" |bash; done < /usr/src/plugins_filtered
 fi
 
 exec "$@"
