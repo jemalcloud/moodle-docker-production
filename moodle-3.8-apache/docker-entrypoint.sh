@@ -5,9 +5,7 @@ declare MOODLE_DATA=/var/www/moodledata
 # install only if executed without CMD parameter
 
 if [[ "$1" == apache2* ]] || [ "$1" == php-fpm ]; then
-
 	# get user and group
-
 	if [ "$(id -u)" = '0' ]; then
 		case "$1" in
 			apache2*)
@@ -44,10 +42,16 @@ if [[ "$1" == apache2* ]] || [ "$1" == php-fpm ]; then
 		fi
 	fi
 
+	# env variables
+	if 	[[ ! -v MOODLE_MYSQL_PASSWORD ]]; then
+		export MOODLE_MYSQL_PASSWORD=$(cat /dev/urandom | tr -dc "a-zA-Z0-9!@#$%^&*()_+?><~\`;'" | fold -w 16 | head -n 1)
+	fi
+
+ 
+
 	# moodle code
 
 	if [ ! -e config.php ]; then
-
 
 		echo >&2 "Moodle not found in $PWD - copying now..."
 		if [ -n "$(ls -A)" ]; then
@@ -75,7 +79,7 @@ if [[ "$1" == apache2* ]] || [ "$1" == php-fpm ]; then
 
 	# database
 
-	echo "Checking database status..."
+	echo >&2"Checking database status..."
 
 	#wait till is ready for connections
 	dockerize -wait tcp://db:3306 -timeout 20s
@@ -85,28 +89,25 @@ if [[ "$1" == apache2* ]] || [ "$1" == php-fpm ]; then
 	dbStatus=$?
 	if [ $dbStatus  -eq 2 ]; then
 		echo >&2 "Creating database..."
-		php $PWD/admin/cli/install_database.php --lang="es" --adminuser="root" --adminpass="password" --adminemail="juandacorreo@gmail.com" --agree-license --fullname="Moodle prueba" --shortname="prueba"
+		php $PWD/admin/cli/install_database.php --lang="${MOODLE_LANG}" --adminuser="${MOODLE_ADMIN_USER}" --adminpass="${MOODLE_ADMIN_PASSWORD}" --adminemail="${MOODLE_ADMIN_EMAIL}" --agree-license --fullname="${MOODLE_SITE_FULLNAME}" --shortname="${MOODLE_SITE_NAME}"
 		echo >&2 "DATABASE CREATED"
 	elif [ $dbStatus -eq 0 ]; then
 		echo >&2 "MOODLE DATABASE FOUND: SKIP CREATION"
 	else
-		echo >&2 "Could not install Moodle Database due to errors!"
-		#exit $dbStatus
+		echo >&2 "ERRORS WITH MOODLE DATABASE!"
+		exit $dbStatus
 	fi
 
 	# install plugins via moosh, first upgrade list
 	echo >&2 "Installing plugins..."
-	# echo >&2 "Getting plug list"
-	# moosh plugin-list >/dev/null
-	#echo >&2 "Plug list downloaded"
-	# remove blank lines and comment lines
+	# remove blank and comment lines
 	cat /usr/src/plugins |sed '/^#/d'|sed '/^$/d' >/usr/src/plugins_filtered
-	echo >&2 "Installing now..."
 	cd /var/www/html
 	# execute plugin installation
 	while read in; do echo moosh plugin-install "$in" |bash; done < /usr/src/plugins_filtered
 	echo >&2 "PLUGINS INSTALLED!"
-	echo >&2 "Starting web server..."
+	echo >&2 "STARTING WEB SERVER"
 fi
 
 exec "$@"
+

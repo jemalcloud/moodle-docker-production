@@ -7,18 +7,22 @@ services:
     depends_on: [db]
     build:
       context: ./moodle-3.8-apache
-    image: cateduac/moodle:apache-3.8.2
+    # image: cateduac/moodle:apache-3.8.2
     environment:
-      VIRTUAL_HOST: "${MOODLE_URL}"
-      LETSENCRYPT_HOST: "${MOODLE_URL}"
-      LETSENCRYPT_EMAIL: ${MOODLE_EMAIL}"
+      VIRTUAL_HOST: "${VIRTUAL_HOST}"
+      LETSENCRYPT_HOST: "${VIRTUAL_HOST}"
+      LETSENCRYPT_EMAIL: "${SERVERADMIN_EMAIL}"
       MOODLE_DB_HOST: "${MOODLE_DB_HOST}"
       MOODLE_DB_NAME: "${MOODLE_DB_NAME}"
       MOODLE_DB_USER: "${MOODLE_MYSQL_USER}"
       MOODLE_DB_PASSWORD: "${MOODLE_MYSQL_PASSWORD}"
-      MOODLE_ADMIN: "${MOODLE_ADMIN}"
-      MOODLE_ADMIN_PASSWORD: "${MOODLE_ADMIN_PASSWORD}"
       MOODLE_URL: "${MOODLE_URL}"
+      MOODLE_ADMIN_USER: "${MOODLE_ADMIN_USER}"
+      MOODLE_ADMIN_PASSWORD: "${MOODLE_ADMIN_PASSWORD}"
+      MOODLE_ADMIN_EMAIL: "${MOODLE_ADMIN_EMAIL}"
+      MOODLE_LANG: "${MOODLE_LANG}"
+      MOODLE_SITE_NAME: "${MOODLE_SITE_NAME}"
+      MOODLE_SITE_FULLNAME: "${MOODLE_SITE_FULLNAME}"
     networks:
       - frontend
       - backend
