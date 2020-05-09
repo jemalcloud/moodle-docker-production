@@ -7,7 +7,7 @@ services:
     depends_on: [db]
     # build:
     #  context: ./moodle-3.8-apache
-    image: cateduac/moodle:apache-3.8.2
+    image: cateduac/moodle:3.7-apache
     environment:
       VIRTUAL_HOST: "${VIRTUAL_HOST}"
       LETSENCRYPT_HOST: "${VIRTUAL_HOST}"
