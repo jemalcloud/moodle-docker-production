@@ -1,13 +1,12 @@
-version: '3'
+version: "3"
 
 services:
-
   moodle:
     hostname: moodle
     container_name: moodle
     depends_on: [db]
-    #build:
-    #  context: ./moodle-3.8-apache
+    build:
+      context: ./moodle-3.8-apache
     image: cateduac/moodle:apache-3.8.2
     environment:
       VIRTUAL_HOST: "${MOODLE_URL}"
@@ -15,7 +14,7 @@ services:
       LETSENCRYPT_EMAIL: ${MOODLE_EMAIL}"
       MOODLE_DB_HOST: "${MOODLE_DB_HOST}"
       MOODLE_DB_NAME: "${MOODLE_DB_NAME}"
-      MOODLE_DB_USER: '${MOODLE_MYSQL_USER}'
+      MOODLE_DB_USER: "${MOODLE_MYSQL_USER}"
       MOODLE_DB_PASSWORD: "${MOODLE_MYSQL_PASSWORD}"
       MOODLE_ADMIN: "${MOODLE_ADMIN}"
       MOODLE_ADMIN_PASSWORD: "${MOODLE_ADMIN_PASSWORD}"
@@ -26,7 +25,6 @@ services:
     volumes:
       - ./moodle-data:/var/www/moodledata
       - ./moodle-code:/var/www/html
-      - ./moodle-3.8-apache/docker-entrypoint.sh:/usr/local/bin/docker-entrypoint.sh
   db:
     hostname: db
     container_name: db
@@ -34,15 +32,14 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: "${MYSQL_ROOT_PASSWORD}"
       MYSQL_DATABASE: "${MOODLE_DB_NAME}"
-      MYSQL_USER: '${MOODLE_MYSQL_USER}'
-      MYSQL_PASSWORD: '${MOODLE_MYSQL_PASSWORD}'
+      MYSQL_USER: "${MOODLE_MYSQL_USER}"
+      MYSQL_PASSWORD: "${MOODLE_MYSQL_PASSWORD}"
     networks:
       - backend
     volumes:
       - ./bbdd:/var/lib/mysql
       - ./dump:/docker-entrypoint-initdb.d
 
-  
   phpmyadmin:
     hostname: phpmyadmin
     image: phpmyadmin/phpmyadmin
@@ -61,4 +58,3 @@ networks:
     driver: bridge
   backend:
     driver: bridge
-
