@@ -82,7 +82,7 @@ if [[ "$1" == apache2* ]] || [ "$1" == php-fpm ]; then
 	echo >&2"Checking database status..."
 
 	#wait till is ready for connections
-	dockerize -wait tcp://db:3306 -timeout 50s
+	dockerize -wait tcp://db:3306 -timeout 5	0s
 	# prevent container exit by php return value
 	set +e
 	php /var/www/html/admin/cli/check_database_schema.php
@@ -100,6 +100,11 @@ if [[ "$1" == apache2* ]] || [ "$1" == php-fpm ]; then
 
 	# install plugins via moosh, first upgrade list
 	echo >&2 "Installing plugins..."
+
+	echo >&2 "Downloading plugin list"
+	moosh plugin-list >/dev/null
+	echo >&2 "Plugin list downloaded!"
+
 	# remove blank and comment lines
 	cat /usr/src/plugins |sed '/^#/d'|sed '/^$/d' >/usr/src/plugins_filtered
 	cd /var/www/html

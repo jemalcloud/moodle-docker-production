@@ -100,6 +100,11 @@ if [[ "$1" == apache2* ]] || [ "$1" == php-fpm ]; then
 
 	# install plugins via moosh, first upgrade list
 	echo >&2 "Installing plugins..."
+
+	echo >&2 "Downloading plugin list"
+	moosh plugin-list >/dev/null
+	echo >&2 "Plugin list downloaded!"
+
 	# remove blank and comment lines
 	cat /usr/src/plugins |sed '/^#/d'|sed '/^$/d' >/usr/src/plugins_filtered
 	cd /var/www/html

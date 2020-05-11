@@ -55,9 +55,6 @@ RUN	echo "Installing composer"; \
 	mv ./composer.phar /usr/local/bin/composer
 
 RUN	echo "Installing mooosh"; \
-	# curl -o moosh.zip -fSL "https://moodle.org/plugins/download.php/21420/moosh_moodle38_2020042300.zip"; \
-	# unzip moosh.zip -d /usr/src; \	
-	# mkdir /usr/src/moosh; \
 	curl -o moosh.tar.gz -fSL "https://github.com/tmuras/moosh/archive/${MOOSH_VERSION}.tar.gz"; \
 	mkdir /usr/src/moosh; \
 	tar -xf moosh.tar.gz -C /usr/src/moosh --strip 1; \
@@ -65,13 +62,9 @@ RUN	echo "Installing mooosh"; \
 	ln -s /usr/src/moosh/moosh.php /usr/local/bin/moosh; \
 	rm moosh.tar.gz
 
-RUN echo "Obtaining plugin list"; \
-	moosh plugin-list >/dev/null
-
 RUN curl -o dockerize.tar.gz -fSL "https://github.com/jwilder/dockerize/releases/download/${DOCKERIZE_VERSION}/dockerize-linux-amd64-${DOCKERIZE_VERSION}.tar.gz"; \
 	tar -xf dockerize.tar.gz -C /usr/local/bin; \
 	rm dockerize.tar.gz
-
 
 COPY moodle-config.php /usr/src/moodle/config.php
 COPY docker-entrypoint.sh /usr/local/bin/
