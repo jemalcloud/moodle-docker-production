@@ -10,7 +10,6 @@ MOODLE_MYSQL_USER=dbuser
 MOODLE_MYSQL_PASSWORD=dbpassword
 
 MOODLE_URL=http://localhost
-PHPMYADMIN_URL=phpmyadmin.localhost
 
 # for installing moodle, user data:
 MOODLE_ADMIN_USER=adminuser
