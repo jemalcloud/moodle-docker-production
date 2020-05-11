@@ -54,7 +54,7 @@ RUN	echo "Installing composer"; \
 	chmod +x ./composer.phar; \
 	mv ./composer.phar /usr/local/bin/composer
 
-RUN	echo "Installing mooosh"; \
+RUN	echo "Installing mooosh"; \	
 	curl -o moosh.tar.gz -fSL "https://github.com/tmuras/moosh/archive/${MOOSH_VERSION}.tar.gz"; \
 	mkdir /usr/src/moosh; \
 	tar -xf moosh.tar.gz -C /usr/src/moosh --strip 1; \
@@ -69,6 +69,7 @@ RUN curl -o dockerize.tar.gz -fSL "https://github.com/jwilder/dockerize/releases
 
 COPY moodle-config.php /usr/src/moodle/config.php
 COPY docker-entrypoint.sh /usr/local/bin/
+COPY plugins-config.sh /usr/local/bin/plugins-config.sh
 COPY plugins /usr/src/
 
 # Fix the original permissions of /tmp, the PHP default upload tmp dir.

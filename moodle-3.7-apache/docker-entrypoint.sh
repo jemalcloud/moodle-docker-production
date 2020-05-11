@@ -79,7 +79,7 @@ if [[ "$1" == apache2* ]] || [ "$1" == php-fpm ]; then
 
 	# database
 
-	echo >&2"Checking database status..."
+	echo >&2 "Checking database status..."
 
 	#wait till is ready for connections
 	dockerize -wait tcp://db:3306 -timeout 5	0s
@@ -109,7 +109,9 @@ if [[ "$1" == apache2* ]] || [ "$1" == php-fpm ]; then
 	cat /usr/src/plugins |sed '/^#/d'|sed '/^$/d' >/usr/src/plugins_filtered
 	cd /var/www/html
 	# execute plugin installation
-	while read in; do echo moosh plugin-install "$in" |bash; done < /usr/src/plugins_filtered
+	while read in; do echo moosh plugin-install -d "$in" |bash; done < /usr/src/plugins_filtered
+	# run plugin configuration
+	plugins-config.sh
 	echo >&2 "PLUGINS INSTALLED!"
 	echo >&2 "STARTING WEB SERVER"
 fi

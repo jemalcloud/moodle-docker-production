@@ -13,7 +13,7 @@ BUILD_PACKAGES="gettext gnupg libcurl4-openssl-dev libfreetype6-dev libicu-dev l
 PACKAGES_POSTGRES="libpq5"
 
 # Packages for MariaDB and MySQL.
-PACKAGES_MYMARIA="libmariadb3"
+PACKAGES_MYMARIA="libmariadb3 mariadb-client"
 
 # Packages for other Moodle runtime dependenices.
 PACKAGES_RUNTIME="ghostscript libaio1 libcurl4 libgss3 libicu63 libmcrypt-dev libxml2 libxslt1.1 \
