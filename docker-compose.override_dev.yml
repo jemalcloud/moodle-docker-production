@@ -4,9 +4,8 @@ services:
   moodle:
     ports:
       - 80:80
-      - 443:443
     volumes:
-      - ./moodle-3.8-apache/docker-entrypoint.sh:/usr/local/bin/docker-entrypoint.sh
+      - ./moodle-3.7-apache/docker-entrypoint.sh:/usr/local/bin/docker-entrypoint.sh
 
   db:
     hostname: db

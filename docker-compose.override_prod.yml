@@ -1,4 +1,6 @@
-version: "3"  
+version: "3"
+
+services:
   proxy:
     hostname: proxy
     container_name: proxy
@@ -27,10 +29,45 @@ version: "3"
       - "./proxy/certs:/etc/nginx/certs:rw"
       - "/var/run/docker.sock:/var/run/docker.sock:ro"
       - "./proxy/vhost.d:/etc/nginx/vhost.d"
-      - html:/usr/share/nginx/html 
+      - html:/usr/share/nginx/html
     networks:
       - frontend
 
+  moodle:
+    environment:
+      VIRTUAL_HOST: "${VIRTUAL_HOST}"
+      LETSENCRYPT_HOST: "${VIRTUAL_HOST}"
+      LETSENCRYPT_EMAIL: "${SSL_EMAIL}"
+
+  # Using several Moodle db service should be external
+  db:
+    hostname: db
+    container_name: db
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: "${MYSQL_ROOT_PASSWORD}"
+      MYSQL_DATABASE: "${MOODLE_DB_NAME}"
+      MYSQL_USER: "${MOODLE_MYSQL_USER}"
+      MYSQL_PASSWORD: "${MOODLE_MYSQL_PASSWORD}"
+    networks:
+      - backend
+    volumes:
+      - ./bbdd:/var/lib/mysql
+      - ./dump:/docker-entrypoint-initdb.d
+
+  phpmyadmin:
+    hostname: phpmyadmin
+    image: phpmyadmin/phpmyadmin
+    container_name: phpmyadmin
+    volumes:
+      - /sessions
+    networks:
+      - frontend
+      - backend
+    environment:
+      VIRTUAL_HOST: "${PHPMYADMIN_VIRTUAL_HOST}"
+      LETSENCRYPT_HOST: "${PHPMYADMIN_VIRTUAL_HOST}"
+      LETSENCRYPT_EMAIL: "${SSL_EMAIL}"
 
 networks:
   frontend:

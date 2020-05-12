@@ -1,6 +1,10 @@
 # for https and reverse nginx proxy:
+# just for production
 VIRTUAL_HOST=localhost
-SERVERADMIN_EMAIL=technicalemail@example.com
+SSL_EMAIL=technicalemail@example.com
+PHPMYADMIN_VIRTUAL_HOST=http://phpmyadmin.localhost
+
+
 
 # for database creation:
 MYSQL_ROOT_PASSWORD=password
