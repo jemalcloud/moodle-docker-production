@@ -2,17 +2,22 @@
 
 This repository contains Docker configuration aimed to provide a good starting point to install moodle in production using docker.
 
+In Catedu we need to deploy several hundreds of Moodle. This repo aims to give us a solution to test locally our developments and to generate our docker images. Our final solution is being implemented in [moodle-docker-deploy repo](https://github.com/catedu/moodle-docker-deploy).
+
 
 ## Features
-* Database servers: MySQL (more to come)
+* Database servers: MySQL 
 * Last supported PHP version
 * Zero-configuration approach
 * All php-extensions (thanks to [moodlehq](https://github.com/moodlehq/moodle-php-apache))
 
 
-## Next Features
-* Crontab configuration (in progress)
-* Auto backup (in progress)
+## Missing Features
+
+These features are out of the scope of this repo (you may have a look at [moodle-docker-deploy repo](https://github.com/catedu/moodle-docker-deploy)):
+
+* Crontab configuration
+* Auto backup 
 
 
 ## Prerequisites
@@ -36,11 +41,17 @@ Open browser webpage: http://localhost (be patient)
 
 ## Activate https
 
-- Not tested! Using [letsEncrypt](https://letsencrypt.org/)
+- Using [letsEncrypt](https://letsencrypt.org/)
+
+  ```
+  cp docker-compose.override_prod.yml docker-compose.override.yml
+  docker-compose up -d
+  ```
+- Modify .env file
 
 ```
-cp docker-compose.override_prod.yml docker-compose.override.yml
-docker-compose up -d
+MOODLE_URL=https://localhost
+SSL_PROXY=true
 ```
 
 ## Contributions
