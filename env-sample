@@ -2,7 +2,7 @@
 # just for production
 VIRTUAL_HOST=localhost
 SSL_EMAIL=technicalemail@example.com
-PHPMYADMIN_VIRTUAL_HOST=http://phpmyadmin.localhost
+PHPMYADMIN_VIRTUAL_HOST=phpmyadmin.localhost
 
 
 
