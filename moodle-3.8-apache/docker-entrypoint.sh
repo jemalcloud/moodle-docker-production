@@ -82,7 +82,7 @@ if [[ "$1" == apache2* ]] || [ "$1" == php-fpm ]; then
 	echo >&2 "Checking database status..."
 
 	#wait till is ready for connections
-	dockerize -wait tcp://db:3306 -timeout 50s
+	dockerize -wait tcp://${MOODLE_DB_HOST}:3306 -timeout 50s
 	# prevent container exit by php return value
 	set +e
 	php /var/www/html/admin/cli/check_database_schema.php
