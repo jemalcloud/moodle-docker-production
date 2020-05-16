@@ -6,7 +6,8 @@ In Catedu we need to deploy several hundreds of Moodle. This repo aims to give u
 
 
 ## Features
-* Database servers: MySQL 
+
+* Database servers: MySQL / MariaDB /PostGreSQL (MySQL in this repo)
 * Last supported PHP version
 * Zero-configuration approach
 * All php-extensions (thanks to [moodlehq](https://github.com/moodlehq/moodle-php-apache))
@@ -21,7 +22,9 @@ These features are out of the scope of this repo (you may have a look at [moodle
 
 
 ## Prerequisites
+
 * [Docker](https://docs.docker.com) and [Docker Compose](https://docs.docker.com/compose/) installed
+
 
 ## Quick start
 
@@ -37,11 +40,14 @@ Open browser webpage: http://localhost (be patient)
 ## Configuration
 
 * Configure your moodle installation using an .env file
+* We have two environments: production (https ready with letsencrypt) and development (default).
+
+* Plugins or special configuration is done using shell scripts or php files. The moodle container executes them from init-scripts directory. We provide an example script (plugins-sampe.sh) file, and moodle image has [moosh binary](https://moosh-online.com/).
 
 
 ## Activate https
 
-- Using [letsEncrypt](https://letsencrypt.org/)
+- Using [letsEncrypt](https://letsencrypt.org/), activating production environment:
 
   ```
   cp docker-compose.override_prod.yml docker-compose.override.yml
@@ -49,10 +55,10 @@ Open browser webpage: http://localhost (be patient)
   ```
 - Modify .env file
 
-```
-MOODLE_URL=https://localhost
-SSL_PROXY=true
-```
+  ```
+  MOODLE_URL=https://localhost
+  SSL_PROXY=true
+  ```
 
 ## Contributions
 
