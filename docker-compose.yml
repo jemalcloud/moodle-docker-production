@@ -19,11 +19,7 @@ services:
       MOODLE_LANG: "${MOODLE_LANG}"
       MOODLE_SITE_NAME: "${MOODLE_SITE_NAME}"
       MOODLE_SITE_FULLNAME: "${MOODLE_SITE_FULLNAME}"
-      DEFAULT_THEME: "${DEFAULT_THEME}"
-      BBB_SERVER_URL: "${BBB_SERVER_URL}"
-      BBB_SECRET: "${BBB_SECRET}"
       SSL_PROXY: "${SSL_PROXY}"
-      EXTERNAL_DB: "${EXTERNAL_DB}"
     networks:
       - frontend
       - backend
