@@ -2,6 +2,33 @@
 set -euo pipefail
 declare MOODLE_DATA=/var/www/moodledata
 
+# usage: process_init_files [file [file [...]]]
+# process initializer files, based on file extensions
+process_init_files() {
+	echo
+	local f
+	for f; do
+		case "$f" in
+			*.sh)
+				if [ -x "$f" ]; then
+					echo >&2 "$f executing..."
+					$f
+					echo >&2 "$f executed!"
+				else
+					echo >&2 "$f skipped, no x permission"
+				fi
+				;;
+			*.php) 
+				echo >&2 "$f executing..."
+				php $f
+				echo >&2 "$f executed!"
+				;;
+			*)  echo >&2 "$f ignored, wrong extension";;
+		esac
+		echo
+	done
+}
+
 # install only if executed without CMD parameter
 
 if [[ "$1" == apache2* ]] || [ "$1" == php-fpm ]; then
@@ -98,21 +125,24 @@ if [[ "$1" == apache2* ]] || [ "$1" == php-fpm ]; then
 		exit $dbStatus
 	fi
 
-	# install plugins via moosh, first upgrade list
-	echo >&2 "Installing plugins..."
 
-	echo >&2 "Downloading plugin list"
-	moosh plugin-list >/dev/null
-	echo >&2 "Plugin list downloaded!"
+	process_init_files /init-scripts/*		# install plugins via moosh, first upgrade list	
 
-	# remove blank and comment lines
-	cat /usr/src/plugins |sed '/^#/d'|sed '/^$/d' >/usr/src/plugins_filtered
-	cd /var/www/html
-	# execute plugin installation
-	while read in; do echo moosh plugin-install -d "$in" |bash; done < /usr/src/plugins_filtered
-	plugins-config.sh
-	echo >&2 "PLUGINS INSTALLED!"
-	echo >&2 "STARTING WEB SERVER"
+
+	# echo >&2 "Installing plugins..."
+
+	# echo >&2 "Downloading plugin list"
+	# moosh plugin-list >/dev/null
+	# echo >&2 "Plugin list downloaded!"				
+
+	# # remove blank and comment lines
+	# cat /usr/src/plugins |sed '/^#/d'|sed '/^$/d' >/usr/src/plugins_filtered
+	# cd /var/www/html
+	# # execute plugin installation
+	# while read in; do echo moosh plugin-install -d "$in" |bash; done < /usr/src/plugins_filtered
+	# plugins-config.sh
+	# echo >&2 "PLUGINS INSTALLED!"
+	# echo >&2 "STARTING WEB SERVER"
 fi
 
 exec "$@"

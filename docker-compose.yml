@@ -30,6 +30,7 @@ services:
     volumes:
       - ./moodle-data:/var/www/moodledata
       - ./moodle-code:/var/www/html
+      - ./init-scripts:/init-scripts
 
 networks:
   frontend:
