@@ -125,27 +125,8 @@ if [[ "$1" == apache2* ]] || [ "$1" == php-fpm ]; then
 		exit $dbStatus
 	fi
 
-
 	process_init_files /init-scripts/*		# install plugins via moosh, first upgrade list	
 
-
-	# echo >&2 "Installing plugins..."
-
-	# echo >&2 "Downloading plugin list"
-	# moosh plugin-list >/dev/null
-	# echo >&2 "Plugin list downloaded!"				
-
-	# # remove blank and comment lines
-	# cat /usr/src/plugins |sed '/^#/d'|sed '/^$/d' >/usr/src/plugins_filtered
-	# cd /var/www/html
-	# # execute plugin installation
-	# while read in; do echo moosh plugin-install -d "$in" |bash; done < /usr/src/plugins_filtered
-	# plugins-config.sh
-	# echo >&2 "PLUGINS INSTALLED!"
-	# echo >&2 "STARTING WEB SERVER"
 fi
 
 exec "$@"
-
-
-
