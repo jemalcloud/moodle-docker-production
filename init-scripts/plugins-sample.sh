@@ -21,6 +21,6 @@ moosh plugin-install -d --release 2020043003 block_xp
 moosh plugin-install -d availability_xp 
 echo >&2 "Plugins installed!"
 
-# moosh config-set theme snap
-# moosh config-set bigbluebuttonbn_server_url 2.2.2.2
-# moosh config-set bigbluebuttonbn_shared_secret thisIsMySecret
+moosh config-set theme snap
+moosh config-set bigbluebuttonbn_server_url 2.2.2.2
+moosh config-set bigbluebuttonbn_shared_secret thisIsMySecret
