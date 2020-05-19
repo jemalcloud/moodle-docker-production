@@ -1,0 +1,44 @@
+version: "3"
+
+services:
+  web:
+    image: nginx:latest
+    # ports:
+    #   - "8080:80"
+    volumes:
+      - ./moodle-code:/usr/share/nginx/html
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+    networks:
+      - frontend
+  moodle:
+    hostname: moodle
+    container_name: moodle
+    build:
+      context: ./moodle-3.7-php-fpm
+    # image: cateduac/moodle:3.7-apache
+    environment:
+      MOODLE_DB_HOST: "${MOODLE_DB_HOST}"
+      MOODLE_DB_NAME: "${MOODLE_DB_NAME}"
+      MOODLE_DB_USER: "${MOODLE_MYSQL_USER}"
+      MOODLE_DB_PASSWORD: "${MOODLE_MYSQL_PASSWORD}"
+      MOODLE_URL: "${MOODLE_URL}"
+      MOODLE_ADMIN_USER: "${MOODLE_ADMIN_USER}"
+      MOODLE_ADMIN_PASSWORD: "${MOODLE_ADMIN_PASSWORD}"
+      MOODLE_ADMIN_EMAIL: "${MOODLE_ADMIN_EMAIL}"
+      MOODLE_LANG: "${MOODLE_LANG}"
+      MOODLE_SITE_NAME: "${MOODLE_SITE_NAME}"
+      MOODLE_SITE_FULLNAME: "${MOODLE_SITE_FULLNAME}"
+      SSL_PROXY: "${SSL_PROXY}"
+    networks:
+      - frontend
+      - backend
+    volumes:
+      - ./moodle-data:/var/www/moodledata
+      - ./moodle-code:/var/www/html
+      - ./init-scripts:/init-scripts
+
+networks:
+  frontend:
+    driver: bridge
+  backend:
+    driver: bridge
