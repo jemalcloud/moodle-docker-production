@@ -6,7 +6,7 @@ services:
     # ports:
     #   - "8080:80"
     volumes:
-      - ./moodle-code:/usr/share/nginx/html
+      - ./moodle-code:/usr/nginx/share/html
       - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
     networks:
       - frontend
