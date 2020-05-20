@@ -8,18 +8,57 @@
 # hack: last one does never get active, so install one more
 
 
+# Get plugin list
+
 echo >&2 "Downloading plugin list..."
 moosh plugin-list >/dev/null
-echo >&2 "Plugin list downloaded!"				
+echo >&2 "Plugin list downloaded!"
+
+# Load sensitive data or configurable data from a .env file
+export $(grep -E -v '^#' /init-scripts/.env | xargs)
 
 
 echo >&2 "Installing plugins..."
 moosh plugin-install -d --release 2019051505 theme_snap
-# moosh plugin-install -d --release 2019042008 mod_bigbluebuttonbn
-# moosh plugin-install -d --release 2020020500 mod_hvp
-# moosh plugin-install -d --release 2020043003 block_xp
+moosh plugin-install -d --release 2019042008 mod_bigbluebuttonbn
+moosh plugin-install -d --release 2020020500 mod_hvp
+moosh plugin-install -d --release 2020043003 block_xp
 moosh plugin-install -d availability_xp 
+moosh plugin-install -d block_configurable_reports # this one (last one) fails, needs to get activated on screen
 echo >&2 "Plugins installed!"
+
+
+# Config smtp
+echo >&2 "Configuring smtp..."
+set -x
+moosh config-set tool_generator_users_password ${TOOL_GENERATOR_PASSWORD}
+moosh config-set smtphosts ${SMTP_HOSTS}
+moosh config-set smtpsecure 
+moosh config-set smtpauthtype LOGIN
+moosh config-set smtpuser ${SMTP_USER}
+moosh config-set smtppass ${SMTP_PASSWORD}
+moosh config-set smtpmaxbulk ${SMTP_MAXBULK}
+moosh config-set noreplyaddress ${NO_REPLY_ADDRESS}
+
+# Config configurable_reports
+echo >&2 "Configuring configurable_reports..."
+moosh config-set cron_hour 0
+moosh config-set cron_minute 0
+moosh config-set crrepository jleyva/moodle-configurable_reports_repository block_configurable_reports
+moosh config-set dbhost db block_configurable_reports
+moosh config-set dbname moodle block_configurable_reports
+moosh config-set dbpass dbpassword block_configurable_reports
+moosh config-set dbuser dbuser block_configurable_reports
+moosh config-set reportlimit 5000 block_configurable_reports
+moosh config-set reporttableui datatables block_configurable_reports
+moosh config-set sharedsqlrepository jleyva/moodle-custom_sql_report_queries block_configurable_reports
+moosh config-set sqlsecurity 1 block_configurable_reports
+moosh config-set sqlsyntaxhighlight 1 block_configurable_reports
+
+set +x
+
+# Config theme snap
+echo >&2 "Configuring theme..."
 
 moosh config-set theme snap
 # import theme settings:
@@ -30,5 +69,3 @@ find /init-scripts/snap_settings -type f -printf "%f\n" | xargs tar -zcf snap_se
 moosh theme-settings-import snap_settings.tar.gz
 # moosh config-set bigbluebuttonbn_server_url 2.2.2.2
 # moosh config-set bigbluebuttonbn_shared_secret thisIsMySecret
-
-
