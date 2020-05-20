@@ -122,7 +122,7 @@ if [[ "$1" == apache2* ]] || [ "$1" == php-fpm ]; then
 		echo >&2 "MOODLE DATABASE FOUND: SKIP CREATION"
 	else
 		echo >&2 "ERRORS WITH MOODLE DATABASE!"
-		exit $dbStatus
+		#exit $dbStatus
 	fi
 
 	process_init_files /init-scripts/*		# install plugins via moosh, first upgrade list	

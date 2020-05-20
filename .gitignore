@@ -1,4 +1,5 @@
 moodle-data
 moodle-code
 bbdd
+init-scripts/snap_settings.tar.gz
 .env
