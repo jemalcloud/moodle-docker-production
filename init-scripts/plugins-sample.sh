@@ -23,7 +23,9 @@ moosh plugin-install -d --release 2019051505 theme_snap
 moosh plugin-install -d --release 2019042008 mod_bigbluebuttonbn
 moosh plugin-install -d --release 2020020500 mod_hvp
 moosh plugin-install -d --release 2020043003 block_xp
-moosh plugin-install -d availability_xp 
+moosh plugin-install -d availability_xp
+# for moodle 3.8
+# moosh-plugin-install -d tool_opcache
 moosh plugin-install -d block_configurable_reports # this one (last one) fails, needs to get activated on screen
 echo >&2 "Plugins installed!"
 
