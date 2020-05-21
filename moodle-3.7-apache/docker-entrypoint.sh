@@ -23,7 +23,7 @@ process_init_files() {
 				php $f
 				echo >&2 "$f executed!"
 				;;
-			*)  echo >&2 "$f ignored, wrong extension";;
+			# *)  echo >&2 "$f ignored, wrong extension";;
 		esac
 		echo
 	done

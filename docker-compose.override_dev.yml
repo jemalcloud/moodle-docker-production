@@ -21,8 +21,6 @@ services:
     volumes:
       - ./bbdd:/var/lib/mysql
       - ./dump:/docker-entrypoint-initdb.d
-      - /etc/timezone:/etc/timezone:ro
-      - /etc/localtime:/etc/localtime:ro
 
   phpmyadmin:
     hostname: phpmyadmin

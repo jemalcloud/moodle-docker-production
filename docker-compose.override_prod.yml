@@ -38,7 +38,10 @@ services:
       VIRTUAL_HOST: "${VIRTUAL_HOST}"
       LETSENCRYPT_HOST: "${VIRTUAL_HOST}"
       LETSENCRYPT_EMAIL: "${SSL_EMAIL}"
-
+    volumes:
+      # just for production, not working on mac
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
   # Using several Moodle db service should be external
   db:
     hostname: db
@@ -54,6 +57,7 @@ services:
     volumes:
       - ./bbdd:/var/lib/mysql
       - ./dump:/docker-entrypoint-initdb.d
+      # just for production, not working on mac
       - /etc/timezone:/etc/timezone:ro
       - /etc/localtime:/etc/localtime:ro
 
