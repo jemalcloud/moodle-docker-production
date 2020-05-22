@@ -40,7 +40,7 @@ RUN { \
 
 RUN { \
 	echo 'file_uploads = On'; \
-	echo 'memory_limit = 256M'; \
+	echo 'memory_limit = 512M'; \
 	echo 'upload_max_filesize = 64M'; \
 	echo 'post_max_size = 64M'; \
 	echo 'max_execution_time = 600'; \
