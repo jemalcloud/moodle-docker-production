@@ -1,0 +1,17 @@
+name: Publish Docker 3.7.6-apache
+on: [push]
+    paths:
+        - '3.7.6-apache/**'
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - name: Publish to Registry
+      uses: elgohr/Publish-Docker-Github-Action@master
+      with:
+        name: cateduac/moodle
+        username: ${{ secrets.DOCKER_HUB_USER }}
+        password: ${{ secrets.DOCKER_HUB_PASSWORD }}
+        context: /3.7.6-apache
+        tags: "3.7, 3.7.6, latest"
