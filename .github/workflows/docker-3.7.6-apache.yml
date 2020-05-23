@@ -8,7 +8,7 @@ on:
   push:
     branches: [master]
     paths:
-      - "apache/3.7.6-apache/**"
+      - "apache/3.7.6/**"
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -25,5 +25,5 @@ jobs:
           name: cateduac/moodle
           username: ${{ secrets.DOCKER_HUB_USER }}
           password: ${{ secrets.DOCKER_HUB_PASSWORD }}
-          context: "apache/3.7.6-apache"
-          tags: "3.7, 3.7.6, latest, 3.7-apache, 3.7.6-apache"
+          context: "apache/3.7.6"
+          tags: "3.7.6-apache"
