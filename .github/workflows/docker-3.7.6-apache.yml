@@ -25,5 +25,5 @@ jobs:
           name: cateduac/moodle
           username: ${{ secrets.DOCKER_HUB_USER }}
           password: ${{ secrets.DOCKER_HUB_PASSWORD }}
-          context: /3.7.6-apache
+          context: "apache/3.7.6-apache"
           tags: "3.7, 3.7.6, latest"
