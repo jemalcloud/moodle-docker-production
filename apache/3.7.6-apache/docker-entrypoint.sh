@@ -74,8 +74,6 @@ if [[ "$1" == apache2* ]] || [ "$1" == php-fpm ]; then
 		export MOODLE_MYSQL_PASSWORD=$(cat /dev/urandom | tr -dc "a-zA-Z0-9!@#$%^&*()_+?><~\`;'" | fold -w 16 | head -n 1)
 	fi
 
- 
-
 	# moodle code
 
 	if [ ! -e config.php ]; then
