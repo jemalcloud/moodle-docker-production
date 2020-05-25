@@ -5,7 +5,7 @@ services:
     ports:
       - 80:80
     volumes:
-      - ./moodle-3.7-apache/docker-entrypoint.sh:/usr/local/bin/docker-entrypoint.sh
+      - ./3.7.6/docker-entrypoint.sh:/usr/local/bin/docker-entrypoint.sh
 
   db:
     hostname: db
