@@ -2,7 +2,7 @@
 # This script contains commands that should be executed first 
 # time the containers goes up or after upgrades to update database
 
-# example command: moosh config-set name value <plugin>
+# example command: moosh -n config-set name value <plugin>
 
 # Plugin list with [--release <build version>] if different from last
 # hack: last one does never get active, so install one more
@@ -11,7 +11,7 @@
 # Get plugin list
 
 echo >&2 "Downloading plugin list..."
-moosh plugin-list >/dev/null
+moosh -n plugin-list >/dev/null
 echo >&2 "Plugin list downloaded!"
 
 # Load sensitive data or configurable data from a .env file
@@ -35,41 +35,41 @@ echo >&2 "Plugins installed!"
 # Config smtp
 echo >&2 "Configuring smtp..."
 set -x
-moosh config-set tool_generator_users_password ${TOOL_GENERATOR_PASSWORD}
-moosh config-set smtphosts ${SMTP_HOSTS}
-moosh config-set smtpsecure 
-moosh config-set smtpauthtype LOGIN
-moosh config-set smtpuser ${SMTP_USER}
-moosh config-set smtppass ${SMTP_PASSWORD}
-moosh config-set smtpmaxbulk ${SMTP_MAXBULK}
-moosh config-set noreplyaddress ${NO_REPLY_ADDRESS}
+moosh -n config-set tool_generator_users_password ${TOOL_GENERATOR_PASSWORD}
+moosh -n config-set smtphosts ${SMTP_HOSTS}
+moosh -n config-set smtpsecure 
+moosh -n config-set smtpauthtype LOGIN
+moosh -n config-set smtpuser ${SMTP_USER}
+moosh -n config-set smtppass ${SMTP_PASSWORD}
+moosh -n config-set smtpmaxbulk ${SMTP_MAXBULK}
+moosh -n config-set noreplyaddress ${NO_REPLY_ADDRESS}
 
 # Config configurable_reports
 echo >&2 "Configuring configurable_reports..."
-moosh config-set cron_hour 0
-moosh config-set cron_minute 0
-moosh config-set crrepository jleyva/moodle-configurable_reports_repository block_configurable_reports
-moosh config-set dbhost db block_configurable_reports
-moosh config-set dbname moodle block_configurable_reports
-moosh config-set dbpass dbpassword block_configurable_reports
-moosh config-set dbuser dbuser block_configurable_reports
-moosh config-set reportlimit 5000 block_configurable_reports
-moosh config-set reporttableui datatables block_configurable_reports
-moosh config-set sharedsqlrepository jleyva/moodle-custom_sql_report_queries block_configurable_reports
-moosh config-set sqlsecurity 1 block_configurable_reports
-moosh config-set sqlsyntaxhighlight 1 block_configurable_reports
+moosh -n config-set cron_hour 0
+moosh -n config-set cron_minute 0
+moosh -n config-set crrepository jleyva/moodle-configurable_reports_repository block_configurable_reports
+moosh -n config-set dbhost db block_configurable_reports
+moosh -n config-set dbname moodle block_configurable_reports
+moosh -n config-set dbpass dbpassword block_configurable_reports
+moosh -n config-set dbuser dbuser block_configurable_reports
+moosh -n config-set reportlimit 5000 block_configurable_reports
+moosh -n config-set reporttableui datatables block_configurable_reports
+moosh -n config-set sharedsqlrepository jleyva/moodle-custom_sql_report_queries block_configurable_reports
+moosh -n config-set sqlsecurity 1 block_configurable_reports
+moosh -n config-set sqlsyntaxhighlight 1 block_configurable_reports
 
 set +x
 
 # Config theme snap
 echo >&2 "Configuring theme..."
 
-moosh config-set theme snap
+moosh -n config-set theme snap
 # import theme settings:
 # script needs to be in /var/www/html and name like theme_xxxx
 # it can't have info about directories: ./  so next line is not valid and I have to "hack it"
 # tar -zcf snap_settings.tar.gz -C /init-scripts/snap_settings .
 find /init-scripts/snap_settings -type f -printf "%f\n" | xargs tar -zcf snap_settings.tar.gz -C /init-scripts/snap_settings
-moosh theme-settings-import snap_settings.tar.gz
-# moosh config-set bigbluebuttonbn_server_url 2.2.2.2
-# moosh config-set bigbluebuttonbn_shared_secret thisIsMySecret
+moosh -n theme-settings-import snap_settings.tar.gz
+# moosh -n config-set bigbluebuttonbn_server_url 2.2.2.2
+# moosh -n config-set bigbluebuttonbn_shared_secret thisIsMySecret
