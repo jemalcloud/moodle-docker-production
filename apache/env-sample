@@ -14,7 +14,6 @@ MOODLE_MYSQL_USER=dbuser
 MOODLE_MYSQL_PASSWORD=dbpassword
 
 SSL_PROXY=false
-EXTERNAL_DB=false
 
 MOODLE_URL=http://localhost
 
@@ -25,9 +24,3 @@ MOODLE_ADMIN_EMAIL=example@example.com
 MOODLE_LANG=en
 MOODLE_SITE_NAME=MySite
 MOODLE_SITE_FULLNAME=This is my awesome site
-
-
-# for moodle initial configuration (plugin related)
-DEFAULT_THEME=snap
-BBB_SERVER_URL=http://bbb.test.url
-BBB_SECRET=thisShouldBeMySharedSecretKey

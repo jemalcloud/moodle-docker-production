@@ -3,19 +3,18 @@ version: "3"
 services:
   web:
     image: nginx:latest
-    # ports:
-    #   - "8080:80"
     volumes:
       - ./moodle-code:/usr/nginx/share/html
       - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
     networks:
       - frontend
+
   moodle:
     hostname: moodle
     container_name: moodle
-    build:
-      context: ./moodle-3.7-php-fpm
-    # image: cateduac/moodle:3.7-apache
+    #build:
+    #  context: ./3.7.6
+    image: cateduac/moodle:3.7.6-nginx-fpm
     environment:
       MOODLE_DB_HOST: "${MOODLE_DB_HOST}"
       MOODLE_DB_NAME: "${MOODLE_DB_NAME}"
@@ -36,6 +35,27 @@ services:
       - ./moodle-data:/var/www/moodledata
       - ./moodle-code:/var/www/html
       - ./init-scripts:/init-scripts
+      # just for production, not working on mac
+      # - /etc/timezone:/etc/timezone:ro
+      # - /etc/localtime:/etc/localtime:ro
+
+  db:
+    hostname: db
+    container_name: db
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: "${MYSQL_ROOT_PASSWORD}"
+      MYSQL_DATABASE: "${MOODLE_DB_NAME}"
+      MYSQL_USER: "${MOODLE_MYSQL_USER}"
+      MYSQL_PASSWORD: "${MOODLE_MYSQL_PASSWORD}"
+    networks:
+      - backend
+    volumes:
+      - ./bbdd:/var/lib/mysql
+      - ./dump:/docker-entrypoint-initdb.d
+      # just for production, not working on mac
+      # - /etc/timezone:/etc/timezone:ro
+      # - /etc/localtime:/etc/localtime:ro
 
 networks:
   frontend:

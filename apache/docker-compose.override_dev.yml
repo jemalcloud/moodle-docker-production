@@ -7,21 +7,6 @@ services:
     volumes:
       - ./3.7.6/docker-entrypoint.sh:/usr/local/bin/docker-entrypoint.sh
 
-  db:
-    hostname: db
-    container_name: db
-    image: mysql:5.7
-    environment:
-      MYSQL_ROOT_PASSWORD: "${MYSQL_ROOT_PASSWORD}"
-      MYSQL_DATABASE: "${MOODLE_DB_NAME}"
-      MYSQL_USER: "${MOODLE_MYSQL_USER}"
-      MYSQL_PASSWORD: "${MOODLE_MYSQL_PASSWORD}"
-    networks:
-      - backend
-    volumes:
-      - ./bbdd:/var/lib/mysql
-      - ./dump:/docker-entrypoint-initdb.d
-
   phpmyadmin:
     hostname: phpmyadmin
     image: phpmyadmin/phpmyadmin

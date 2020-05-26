@@ -5,13 +5,15 @@ declare MOODLE_DATA=/var/www/moodledata
 # usage: process_init_files [file [file [...]]]
 # process initializer files, based on file extensions
 process_init_files() {
+	echo
+	
 	local f
 	for f; do
 		case "$f" in
 			*.sh)
 				if [ -x "$f" ]; then
 					echo >&2 "$f executing..."
-					$f
+					sudo -H -E -u www-data $f
 					echo >&2 "$f executed!"
 				else
 					echo >&2 "$f skipped, no x permission"
@@ -53,27 +55,10 @@ if [[ "$1" == apache2* ]] || [ "$1" == php-fpm ]; then
 		group="$(id -g)"
 	fi
 
-	# moodle data directory
-
-	if [ ! -d $MOODLE_DATA ]; then
-		mkdir $MOODLE_DATA
-		chown -R "$user:$group" $MOODLE_DATA
-		echo >&2 "MOODLE DATA DIRECTORY CREATED"
-	else
-		echo >&2 "MOODLE DATA DIRECTORY FOUND: SKIP CREATION"
-		# if the directory exists AND the permissions of it are root:root, let's chown it (likely a Docker-created directory)
-		if [ "$(id -u)" = '0' ] && [ "$(stat -c '%u:%g' $MOODLE_DATA)" = '0:0' ]; then
-		    echo >&2 "Changed permissions to Moodle Data directory"
-			chown -R "$user:$group" $MOODLE_DATA
-		fi
-	fi
-
 	# env variables
 	if 	[[ ! -v MOODLE_MYSQL_PASSWORD ]]; then
 		export MOODLE_MYSQL_PASSWORD=$(cat /dev/urandom | tr -dc "a-zA-Z0-9!@#$%^&*()_+?><~\`;'" | fold -w 16 | head -n 1)
 	fi
-
- 
 
 	# moodle code
 
@@ -98,6 +83,7 @@ if [[ "$1" == apache2* ]] || [ "$1" == php-fpm ]; then
 			targetTarArgs+=( --no-overwrite-dir )
 		fi
 		tar "${sourceTarArgs[@]}" . | tar "${targetTarArgs[@]}"
+		chown "$user":"$group" /var/www/html
 		echo >&2 "MOODLE CODE CREATED"
 	else
 		echo >&2 "MOODLE CODE FOUND: SKIP CREATION"
@@ -121,7 +107,22 @@ if [[ "$1" == apache2* ]] || [ "$1" == php-fpm ]; then
 		echo >&2 "MOODLE DATABASE FOUND: SKIP CREATION"
 	else
 		echo >&2 "ERRORS WITH MOODLE DATABASE!"
-		exit $dbStatus
+		#exit $dbStatus
+	fi
+
+		# moodle data directory
+
+	if [ ! -d $MOODLE_DATA ]; then
+		mkdir $MOODLE_DATA
+		chown -R "$user:$group" $MOODLE_DATA
+		echo >&2 "MOODLE DATA DIRECTORY CREATED"
+	else
+		echo >&2 "MOODLE DATA DIRECTORY FOUND: SKIP CREATION"
+		# if the directory exists AND the permissions of it are root:root, let's chown it (likely a Docker-created directory)
+		if [ "$(id -u)" = '0' ] && [ "$(stat -c '%u:%g' $MOODLE_DATA)" = '0:0' ]; then
+		    echo >&2 "Changed permissions to Moodle Data directory"
+			chown -R "$user:$group" $MOODLE_DATA
+		fi
 	fi
 
 	process_init_files /init-scripts/*		# install plugins via moosh, first upgrade list	
