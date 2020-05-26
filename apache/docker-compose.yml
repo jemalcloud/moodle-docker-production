@@ -4,9 +4,9 @@ services:
   moodle:
     hostname: moodle
     container_name: moodle
-    # build:
-    #  context: ./moodle-3.7-apache
-    image: cateduac/moodle:3.7-apache
+    #build:
+    # context: ./3.7.6
+    image: cateduac/moodle:3.7.6-apache
     environment:
       MOODLE_DB_HOST: "${MOODLE_DB_HOST}"
       MOODLE_DB_NAME: "${MOODLE_DB_NAME}"

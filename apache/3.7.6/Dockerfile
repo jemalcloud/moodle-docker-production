@@ -81,6 +81,7 @@ COPY docker-entrypoint.sh /usr/local/bin/
 # Fix the original permissions of /tmp, the PHP default upload tmp dir.
 
 RUN chmod 777 /tmp && chmod +t /tmp ;\
-	chown -R www-data:www-data -R /usr/src/moodle
+	chown -R www-data:www-data -R /usr/src/moodle ;\
+	chown www-data:www-data /var/www # moosh uses it
 ENTRYPOINT ["docker-entrypoint.sh"]
 CMD ["apache2-foreground"]
