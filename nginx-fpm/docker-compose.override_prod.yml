@@ -33,7 +33,7 @@ services:
     networks:
       - frontend
 
-  moodle:
+  web:
     environment:
       VIRTUAL_HOST: "${VIRTUAL_HOST}"
       LETSENCRYPT_HOST: "${VIRTUAL_HOST}"
