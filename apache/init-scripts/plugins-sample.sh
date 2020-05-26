@@ -72,7 +72,7 @@ moosh -n config-set theme snap
 # find /init-scripts/snap_settings -type f -printf "%f\n" | xargs tar -zcf snap_settings.tar.gz -C /init-scripts/snap_settings
 # moosh -n theme-settings-import snap_settings.tar.gz
 
-moosh -n theme-settings-import theme_settings.tar.gz
+moosh -n theme-settings-import --targettheme snap theme_settings.tar.gz
 
 # moosh -n config-set bigbluebuttonbn_server_url 2.2.2.2
 # moosh -n config-set bigbluebuttonbn_shared_secret thisIsMySecret
