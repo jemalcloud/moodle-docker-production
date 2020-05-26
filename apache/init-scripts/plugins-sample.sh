@@ -69,10 +69,8 @@ moosh -n config-set theme snap
 # script needs to be in /var/www/html and name like theme_xxxx
 # it can't have info about directories: ./  so next line is not valid and I have to "hack it"
 # tar -zcf snap_settings.tar.gz -C /init-scripts/snap_settings .
-# find /init-scripts/snap_settings -type f -printf "%f\n" | xargs tar -zcf snap_settings.tar.gz -C /init-scripts/snap_settings
-# moosh -n theme-settings-import snap_settings.tar.gz
-
-moosh -n theme-settings-import --targettheme snap theme_settings.tar.gz
+find /init-scripts/snap_settings -type f -printf "%f\n" | xargs tar -zcf snap_settings.tar.gz -C /init-scripts/snap_settings
+moosh -n theme-settings-import --targettheme snap snap_settings.tar.gz
 
 # moosh -n config-set bigbluebuttonbn_server_url 2.2.2.2
 # moosh -n config-set bigbluebuttonbn_shared_secret thisIsMySecret
