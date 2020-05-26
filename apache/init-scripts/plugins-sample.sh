@@ -64,7 +64,7 @@ set +x
 # Config theme snap
 echo >&2 "Configuring theme..."
 
-moosh -n config-set theme snap
+moosh -n config-set theme moove
 # import theme settings:
 # script needs to be in /var/www/html and name like theme_xxxx
 # it can't have info about directories: ./  so next line is not valid and I have to "hack it"
