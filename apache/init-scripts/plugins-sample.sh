@@ -39,7 +39,7 @@ echo >&2 "Configuring smtp..."
 set -x
 moosh -n config-set tool_generator_users_password ${TOOL_GENERATOR_PASSWORD}
 moosh -n config-set smtphosts ${SMTP_HOSTS}
-moosh -n config-set smtpsecure 
+moosh -n config-set smtpsecure TLS
 moosh -n config-set smtpauthtype LOGIN
 moosh -n config-set smtpuser ${SMTP_USER}
 moosh -n config-set smtppass ${SMTP_PASSWORD}
@@ -51,10 +51,10 @@ echo >&2 "Configuring configurable_reports..."
 moosh -n config-set cron_hour 0
 moosh -n config-set cron_minute 0
 moosh -n config-set crrepository jleyva/moodle-configurable_reports_repository block_configurable_reports
-moosh -n config-set dbhost db block_configurable_reports
-moosh -n config-set dbname moodle block_configurable_reports
-moosh -n config-set dbpass dbpassword block_configurable_reports
-moosh -n config-set dbuser dbuser block_configurable_reports
+moosh -n config-set dbhost ${MOODLE_DB_HOST} block_configurable_reports
+moosh -n config-set dbname ${MOODLE_DB_NAME} block_configurable_reports
+moosh -n config-set dbuser ${MOODLE_DB_USER} block_configurable_reports
+moosh -n config-set dbpass ${MOODLE_DB_PASSWORD} block_configurable_reports
 moosh -n config-set reportlimit 5000 block_configurable_reports
 moosh -n config-set reporttableui datatables block_configurable_reports
 moosh -n config-set sharedsqlrepository jleyva/moodle-custom_sql_report_queries block_configurable_reports
