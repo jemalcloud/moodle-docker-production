@@ -20,6 +20,8 @@ export $(grep -E -v '^#' /init-scripts/.env | xargs)
 
 echo >&2 "Installing plugins..."
 moosh -n plugin-install -d theme_snap
+moosh -n plugin-install -d theme_moove
+moosh -n plugin-install -d format_tiles
 moosh -n plugin-install -d mod_bigbluebuttonbn
 moosh -n plugin-install -d mod_hvp
 moosh -n plugin-install -d block_xp
