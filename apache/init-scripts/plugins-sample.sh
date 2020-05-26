@@ -61,6 +61,17 @@ moosh -n config-set sharedsqlrepository jleyva/moodle-custom_sql_report_queries 
 moosh -n config-set sqlsecurity 1 block_configurable_reports
 moosh -n config-set sqlsyntaxhighlight 1 block_configurable_reports
 
+# Config webservices #TODO check config
+moosh -n config-set enablewebservices 1 core
+moosh -n config-set enablemobilewebservice 1 core 
+
+# Config mobile notifications #TODO check config
+moosh -n config-set airnotifierurl https://messages.moodle.net
+moosh -n config-set airnotifierport 443
+moosh -n config-set airnotifiermobileappname com.moodle.moodlemobile
+moosh -n config-set airnotifierappname commoodlemoodlemobile
+moosh -n config-set airnotifieraccesskey #TODO
+
 set +x
 
 # Config theme snap
