@@ -19,7 +19,6 @@ export $(grep -E -v '^#' /init-scripts/.env | xargs)
 
 
 echo >&2 "Installing plugins..."
-moosh plugin-install -d theme_snap
 moosh plugin-install -d theme_moove
 moosh plugin-install -d format_tiles
 moosh plugin-install -d mod_bigbluebuttonbn
@@ -61,37 +60,40 @@ moosh config-set sharedsqlrepository jleyva/moodle-custom_sql_report_queries blo
 moosh config-set sqlsecurity 1 block_configurable_reports
 moosh config-set sqlsyntaxhighlight 1 block_configurable_reports
 
-# Config webservices #TODO check config
-moosh config-set enablewebservices 1 core
-moosh config-set enablemobilewebservice 1 core 
+# Config webservices
+moosh config-set enablewebservices 1
+moosh config-set enablemobilewebservice 1
 
-# Config mobile notifications #TODO check config
-# moosh config-set airnotifierurl https://messages.moodle.net
-# moosh config-set airnotifierport 443
-# moosh config-set airnotifiermobileappname com.moodle.moodlemobile
-# moosh config-set airnotifierappname commoodlemoodlemobile
-# moosh config-set airnotifieraccesskey #TODO
-# 
-# digestmailtime
-# registrationpending {int de 24 horas}
-# doclang es
-# defaulthomepage 1
-# allowthemechangeonurl 1 # cambiar a 0
-# themedesignermode 1 # cambiar a 0
-# cronremotepassword klavekron # mejorar
-# cronclionly # ¿Qué es esto?
-# searchincludeallcourses 1
-# lang es
-# country ES
-# timezone Europe/Madrid
-# badges_allowexternalbackpack 1
-# badges_allowcoursebadges 1
-# badges_badgesalt badges1589239382 
-# badges_defaultissuercontact ${MOODLE_MANAGER}
-# 
-# enablegravatar 1
+# Config mobile notifications
+moosh config-set airnotifierurl https://messages.moodle.net
+moosh config-set airnotifierport 443
+moosh config-set airnotifiermobileappname com.moodle.moodlemobile
+moosh config-set airnotifierappname commoodlemoodlemobile
 
-# guestloginbutton puede ser que esto lo quieran quitar
+# If we want to set the time when students receive mails
+# moosh config-set digestmailtime 18
+
+# Set languages
+moosh config-set doclang es
+moosh config-set lang es
+moosh config-set country ES
+moosh config-set timezone Europe/Madrid
+
+
+# Config navigation
+moosh config-set defaulthomepage 0
+moosh config-set searchincludeallcourses 1
+
+
+# Enable cron through web browser
+moosh config-set cronremotepassword ${CRON_BROWSER_PASS}
+
+# Badges config
+moosh config-set badges_defaultissuercontact ${MOODLE_MANAGER}
+
+# Users config
+moosh config-set enablegravatar 1
+moosh config-set guestloginbutton 0
 
 set +x
 
@@ -112,3 +114,8 @@ moosh theme-settings-import --targettheme moove *tar.gz
 
 # moosh config-set bigbluebuttonbn_server_url 2.2.2.2
 # moosh config-set bigbluebuttonbn_shared_secret thisIsMySecret
+
+#TODO import moodle book
+#TODO import create categories
+#TODO config repositories
+#TODO install language packages and tune them

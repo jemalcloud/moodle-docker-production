@@ -63,3 +63,9 @@ Open browser webpage: http://localhost (be patient)
 ## Contributions
 
 Are extremely welcome!
+
+## After installing. TODOs via web interface
+
+* Need to register the site in yout-moodle-url/admin/registration/index.php?returnurl=%2Fadmin%2Findex.php
+* Need to requests an airnotifierkey in your-moodle-url/admin/settings.php?section=messagesettingairnzotifier
+* Need to enable notifications through mobile in your-moodle-url/admin/message.php

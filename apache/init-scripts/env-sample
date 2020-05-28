@@ -11,3 +11,6 @@ MOODLE_DB_HOST=db
 MOODLE_DB_NAME=moodle
 MOODLE_DB_USER=dbuser
 MOODLE_DB_PASSWORD=dbpassword
+
+CRON_BROWSER_PASS=cronpass
+MOODLE_MANAGER=mail@manageres
