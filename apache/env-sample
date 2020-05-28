@@ -21,6 +21,6 @@ MOODLE_URL=http://localhost
 MOODLE_ADMIN_USER=adminuser
 MOODLE_ADMIN_PASSWORD=adminpassword
 MOODLE_ADMIN_EMAIL=example@example.com
-MOODLE_LANG=en
+MOODLE_LANG=es
 MOODLE_SITE_NAME=MySite
 MOODLE_SITE_FULLNAME=This is my awesome site
