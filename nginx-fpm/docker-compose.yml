@@ -16,7 +16,7 @@ services:
     container_name: moodle
     build:
       context: ./3.7.6
-    image: cateduac/moodle:3.7.6-nginx-fpm
+    #image: cateduac/moodle:3.7.6-nginx-fpm
     environment:
       MOODLE_DB_HOST: "${MOODLE_DB_HOST}"
       MOODLE_DB_NAME: "${MOODLE_DB_NAME}"
@@ -37,6 +37,8 @@ services:
       - ./moodle-data:/var/www/moodledata
       - ./moodle-code:/var/www/html
       - ./fpm-conf:/usr/local/etc/php-fpm.d
+      - ./php-conf/opcache.ini:/usr/local/etc/php/conf.d/opcache.ini
+      - ./php-conf/uploads.ini:/usr/local/etc/php/conf.d/uploads.ini
       - ./init-scripts:/init-scripts
       - phpsocket:/sock
       # just for production, not working on mac

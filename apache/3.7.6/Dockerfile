@@ -34,7 +34,7 @@ RUN { \
 	echo 'opcache.validate_timestamps = 1'; \
 	echo 'opcache.save_comments=1'; \
 	echo 'opcache.enable_file_override=0'; \
-	} > /usr/local/etc/php/conf.d/opcache-recommended.ini
+	} > /usr/local/etc/php/conf.d/opcache.ini
 
 # usefull for moodle
 

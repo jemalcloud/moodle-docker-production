@@ -19,29 +19,32 @@ ARG DEBIAN_FRONTEND=noninteractive
 COPY php-extensions.sh /tmp
 RUN /tmp/php-extensions.sh
 
-
-# set recommended PHP.ini settings
-# see https://secure.php.net/manual/en/opcache.installation.php
-# RUN { \
-# 	echo 'opcache.memory_consumption=128'; \
-# 	echo 'opcache.interned_strings_buffer=8'; \
-# 	echo 'opcache.max_accelerated_files=4000'; \
-# 	echo 'opcache.revalidate_freq=2'; \
-# 	echo 'opcache.fast_shutdown=1'; \
-# 	echo 'opcache.enable_cli=1'; \
-# 	} > /usr/local/etc/php/conf.d/opcache-recommended.ini
+# set recommended opcache settings 
+# see https://www.php.net/manual/en/opcache.installation.php
+## see https://docs.moodle.org/38/en/OPcache
+RUN { \
+	echo 'opcache.memory_consumption=128'; \
+	echo 'opcache.interned_strings_buffer=8'; \
+	echo 'opcache.max_accelerated_files=10000'; \
+	echo 'opcache.revalidate_freq=60'; \
+	echo 'opcache.fast_shutdown=1'; \
+	echo 'opcache.enable_cli=1'; \
+	echo 'opcache.use_cwd=1'; \
+	echo 'opcache.validate_timestamps = 1'; \
+	echo 'opcache.save_comments=1'; \
+	echo 'opcache.enable_file_override=0'; \
+	} > /usr/local/etc/php/conf.d/opcache.ini
 
 # usefull for moodle
 
-# RUN { \
-# 	echo 'file_uploads = On'; \
-# 	echo 'memory_limit = 256M'; \
-# 	echo 'upload_max_filesize = 64M'; \
-# 	echo 'post_max_size = 64M'; \
-# 	echo 'max_execution_time = 600'; \
-# 	} > /usr/local/etc/php/conf.d/uploads.ini
+RUN { \
+	echo 'file_uploads = On'; \
+	echo 'memory_limit = 512M'; \
+	echo 'upload_max_filesize = 64M'; \
+	echo 'post_max_size = 64M'; \
+	echo 'max_execution_time = 600'; \
+	} > /usr/local/etc/php/conf.d/uploads.ini
 
-# RUN a2enmod rewrite expires
 
 RUN	echo "Installing moodle"; \
 	curl -o moodle.tar.gz -fSL "https://github.com/moodle/moodle/archive/v${VERSION}.tar.gz"; \
