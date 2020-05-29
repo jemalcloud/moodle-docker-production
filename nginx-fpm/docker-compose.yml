@@ -6,6 +6,7 @@ services:
     volumes:
       - ./moodle-code:/usr/nginx/share/html
       - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+      - ./moodle-data:/var/www/moodledata:ro
       - phpsocket:/sock
     networks:
       - frontend
@@ -13,8 +14,8 @@ services:
   moodle:
     hostname: moodle
     container_name: moodle
-    build:
-      context: ./3.7.6
+    #build:
+    #  context: ./3.7.6
     image: cateduac/moodle:3.7.6-nginx-fpm
     environment:
       MOODLE_DB_HOST: "${MOODLE_DB_HOST}"
@@ -35,7 +36,9 @@ services:
     volumes:
       - ./moodle-data:/var/www/moodledata
       - ./moodle-code:/var/www/html
-      - ./fpm-conf/zz-docker.conf:/usr/local/etc/php-fpm.d/zz-docker.conf
+      - ./fpm-conf:/usr/local/etc/php-fpm.d
+      - ./php-conf/opcache.ini:/usr/local/etc/php/conf.d/opcache.ini
+      - ./php-conf/uploads.ini:/usr/local/etc/php/conf.d/uploads.ini
       - ./init-scripts:/init-scripts
       - phpsocket:/sock
       # just for production, not working on mac

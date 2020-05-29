@@ -1,6 +1,8 @@
 #!/bin/bash
 set -euo pipefail
 declare MOODLE_DATA=/var/www/moodledata
+declare MOODLE_DATA_REPOSITORY=/var/www/moodledata/repository
+declare MOODLE_DATA_BACKUPS=/var/www/moodledata/repository/backups
 
 # usage: process_init_files [file [file [...]]]
 # process initializer files, based on file extensions
@@ -114,6 +116,8 @@ if [[ "$1" == apache2* ]] || [ "$1" == php-fpm ]; then
 
 	if [ ! -d $MOODLE_DATA ]; then
 		mkdir $MOODLE_DATA
+		mkdir $MOODLE_DATA_REPOSITORY
+		mkdir $MOODLE_DATA_BACKUPS
 		chown -R "$user:$group" $MOODLE_DATA
 		echo >&2 "MOODLE DATA DIRECTORY CREATED"
 	else
