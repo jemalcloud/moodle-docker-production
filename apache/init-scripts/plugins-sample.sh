@@ -93,7 +93,7 @@ moosh config-set badges_defaultissuercontact ${MOODLE_MANAGER}
 
 # Users config
 moosh config-set enablegravatar 1
-moosh config-set guestloginbutton 0
+# moosh config-set guestloginbutton 1
 
 set +x
 
@@ -119,3 +119,5 @@ moosh theme-settings-import --targettheme moove *tar.gz
 #TODO import create categories
 #TODO config repositories
 #TODO install language packages and tune them
+
+echo All done
