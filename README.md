@@ -70,3 +70,5 @@ Are extremely welcome!
 * Need to requests an airnotifierkey in your-moodle-url/admin/settings.php?section=messagesettingairnzotifier
 * Need to enable notifications through mobile in your-moodle-url/admin/message.php
 * Need to install H5P Modules through web interface by adding an H5P activity to a course and, then, install all the modules
+* Need to upload courses
+* Need to upload users
