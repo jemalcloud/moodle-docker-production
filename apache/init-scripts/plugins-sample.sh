@@ -64,6 +64,9 @@ moosh config-set sqlsyntaxhighlight 1 block_configurable_reports
 moosh config-set enablewebservices 1
 moosh config-set enablemobilewebservice 1
 
+# Config blog
+moosh config-set enableblogs 1
+
 # Config mobile notifications
 moosh config-set airnotifierurl https://messages.moodle.net
 moosh config-set airnotifierport 443
