@@ -1,1 +1,1 @@
-moosh -n category-import category_sec.xml
+moosh -n category-import /init-scripts/category_sec.xml
