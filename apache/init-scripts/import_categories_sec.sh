@@ -1,1 +1,1 @@
-moosh -n category-import category_secondary.xml
+moosh -n category-import category_sec.xml
