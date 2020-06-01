@@ -77,8 +77,8 @@ moosh config-set airnotifierappname commoodlemoodlemobile
 # moosh config-set digestmailtime 18
 
 # Set languages
-moosh config-set doclang es
-moosh config-set lang es
+# moosh config-set doclang es
+# moosh config-set lang es
 moosh config-set country ES
 moosh config-set timezone Europe/Madrid
 

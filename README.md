@@ -72,3 +72,4 @@ Are extremely welcome!
 * Need to install H5P Modules through web interface by adding an H5P activity to a course and, then, install all the modules
 * Need to upload courses
 * Need to upload users
+* Need to configure caché through your-moodle-url/cache/admin.php
