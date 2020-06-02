@@ -1,0 +1,1 @@
+moosh category-import /init-scripts/cpi/categories.xml
