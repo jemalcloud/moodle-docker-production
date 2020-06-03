@@ -1,4 +1,4 @@
-moosh category-import /init-scripts/ceip/categories.xml
+moosh category-import /init-scripts/cpi/categories_CPI.xml
 
 # Importing courses in inf
 categories="21 22 23"
@@ -276,7 +276,7 @@ moosh course-config-set course 117 fullname Aragonés
 moosh course-config-set course 118 fullname Français
 moosh course-config-set course 119 fullname Ciencias Naturales
 
-# Populate category 4
+# Populate id 37
 
 moosh course-restore /init-scripts/mbzs/copia_de_seguridad-moodle2-course-55-20200530-0856-nu.mbz 37
 moosh course-restore /init-scripts/mbzs/copia_de_seguridad-moodle2-course-39-20200530-0857-nu.mbz 37
@@ -299,19 +299,3 @@ moosh course-config-set course 123 fullname "Proyecto 4"
 moosh course-config-set course 124 fullname "Proyecto 5"
 moosh course-config-set course 125 fullname "Proyecto 6"
 
-# Populate category 
-
-moosh course-restore /init-scripts/mbzs/copia_de_seguridad-moodle2-course-27-20200530-0856-nu.mbz 4
-moosh course-restore /init-scripts/mbzs/copia_de_seguridad-moodle2-course-28-20200530-0857-nu.mbz 4
-moosh course-restore /init-scripts/mbzs/copia_de_seguridad-moodle2-course-33-20200530-0857-nu.mbz 4
-moosh course-restore /init-scripts/mbzs/copia_de_seguridad-moodle2-course-54-20200530-0857-nu.mbz 4
-
-moosh course-config-set course 126 shortname Claustro
-moosh course-config-set course 127 shortname CCP
-moosh course-config-set course 128 shortname Equipo_Directivo
-moosh course-config-set course 129 shortname Equipos_Didacticos
-
-moosh course-config-set course 126 fullname "Claustro"
-moosh course-config-set course 127 fullname "CCP"
-moosh course-config-set course 128 fullname "Equipo Directivo"
-moosh course-config-set course 129 fullname "Equipos Didácticos"

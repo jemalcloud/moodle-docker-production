@@ -1,9 +1,9 @@
-moosh category-import /init-scripts/ies/categories.xml
+moosh category-import /init-scripts/ies/categories_IES.xml
 
 categories="11 12"
 
 for category in $categories; do
-  moosh -n course-restore ../moodledata/repository/backups/$name\_start_backup.mbz $category
+  moosh course-restore /var/www/moodledata/repository/backups/$name\_start_backup.mbz $category
 done
 
 echo All done
