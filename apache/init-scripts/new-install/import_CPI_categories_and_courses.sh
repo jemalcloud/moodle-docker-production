@@ -1,4 +1,4 @@
-moosh category-import /init-scripts/cpi/categories_CPI.xml
+moosh category-import /init-scripts/${INSTALL_TYPE}/categories_CPI.xml
 
 # Importing courses in inf
 categories="21 22 23"

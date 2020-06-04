@@ -71,6 +71,6 @@ moosh config-set enablegravatar 1
 
 # import categories and courses
 echo >&2 "Importing categories and courses..."
-/init-scripts/import_${SCHOOL_TYPE}_categories_and_courses.sh
+/init-scripts/${INSTALL_TYPE}/import_${SCHOOL_TYPE}_categories_and_courses.sh
 
 # Change language configuration

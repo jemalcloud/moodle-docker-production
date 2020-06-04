@@ -1,4 +1,4 @@
-moosh category-import /init-scripts/ies/categories_IES.xml
+moosh category-import /init-scripts/${INSTALL_TYPE}/categories_IES.xml
 
 categories="11 12"
 
