@@ -9,7 +9,7 @@
 # hack: last one does never get active, so install one more
 
 # Load sensitive data or configurable data from a .env file
-export $(grep -E -v '^#' /init-scripts/.env | xargs)
+#export $(grep -E -v '^#' /init-scripts/.env | xargs)
 
 # GET PLUGIN LIST
 
@@ -45,8 +45,8 @@ moosh config-set cron_minute 0
 moosh config-set crrepository jleyva/moodle-configurable_reports_repository block_configurable_reports
 moosh config-set dbhost ${MOODLE_DB_HOST} block_configurable_reports
 moosh config-set dbname ${MOODLE_DB_NAME} block_configurable_reports
-moosh config-set dbuser ${MOODLE_MYSQL_USER} block_configurable_reports
-moosh config-set dbpass ${MOODLE_MYSQL_PASSWORD} block_configurable_reports
+moosh config-set dbuser ${MOODLE_DB_USER} block_configurable_reports
+moosh config-set dbpass ${MOODLE_DB_PASSWORD} block_configurable_reports
 moosh config-set reportlimit 5000 block_configurable_reports
 moosh config-set reporttableui datatables block_configurable_reports
 moosh config-set sharedsqlrepository jleyva/moodle-custom_sql_report_queries block_configurable_reports

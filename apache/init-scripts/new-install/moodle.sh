@@ -7,7 +7,7 @@
 
 
 # Load sensitive data or configurable data from a .env file
-export $(grep -E -v '^#' /init-scripts/.env | xargs)
+#export $(grep -E -v '^#' /init-scripts/.env | xargs)
 
 # Config smtp
 echo >&2 "Configuring smtp..."
