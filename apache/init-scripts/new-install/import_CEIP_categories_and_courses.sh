@@ -1,317 +1,381 @@
-moosh category-import /init-scripts/ceip/categories_CEIP.xml
-
-# Importing courses in inf
-categories="21 22 23"
-
-for category in $categories; do
-  moosh course-restore /init-scripts/mbzs/copia_de_seguridad-moodle2-course-9-20200530-0857-nu.mbz $category
-  moosh course-restore /init-scripts/mbzs/copia_de_seguridad-moodle2-course-8-20200530-0857-nu.mbz $category
-  moosh course-restore /init-scripts/mbzs/copia_de_seguridad-moodle2-course-7-20200530-0857-nu.mbz $category
-  moosh course-restore /init-scripts/mbzs/copia_de_seguridad-moodle2-course-6-20200530-0857-nu.mbz $category
-  moosh course-restore /init-scripts/mbzs/copia_de_seguridad-moodle2-course-4-20200530-0856-nu.mbz $category
-  moosh course-restore /init-scripts/mbzs/copia_de_seguridad-moodle2-course-5-20200530-0856-nu.mbz $category
-  moosh course-restore /init-scripts/mbzs/copia_de_seguridad-moodle2-course-35-20200530-0857-nu.mbz $category
-  moosh course-restore /init-scripts/mbzs/copia_de_seguridad-moodle2-course-36-20200530-0857-nu.mbz $category
-  moosh course-restore /init-scripts/mbzs/copia_de_seguridad-moodle2-course-37-20200530-0857-nu.mbz $category
-  moosh course-restore /init-scripts/mbzs/copia_de_seguridad-moodle2-course-44-20200530-0857-nu.mbz $category
-  moosh course-restore /init-scripts/mbzs/copia_de_seguridad-moodle2-course-45-20200530-0857-nu.mbz $category
-  moosh course-restore /init-scripts/mbzs/lastbackup_56.mbz $category
-  moosh course-restore /init-scripts/mbzs/lastbackup_57.mbz $category
-done
-
-moosh course-config-set course 3 shortname Inf_Pri_Proyecto1
-moosh course-config-set course 4 shortname Inf_Pri_Proyecto2
-moosh course-config-set course 5 shortname Inf_Pri_Proyecto3
-moosh course-config-set course 6 shortname Inf_Pri_Proyecto4
-moosh course-config-set course 7 shortname Inf_Pri_Proyecto5
-moosh course-config-set course 8 shortname Inf_Pri_Proyecto6
-moosh course-config-set course 9 shortname Inf_Pri_English
-moosh course-config-set course 10 shortname Inf_Pri_Atencion
-moosh course-config-set course 11 shortname Inf_Pri_Religion
-moosh course-config-set course 12 shortname Inf_Pri_Aleman
-moosh course-config-set course 13 shortname Inf_Pri_Frances
-moosh course-config-set course 14 shortname Inf_Pri_Aragones
-moosh course-config-set course 15 shortname Inf_Pri_Catalan
-moosh course-config-set course 16 shortname Inf_Seg_Proyecto1
-moosh course-config-set course 17 shortname Inf_Seg_Proyecto2
-moosh course-config-set course 18 shortname Inf_Seg_Proyecto3
-moosh course-config-set course 19 shortname Inf_Seg_Proyecto4
-moosh course-config-set course 20 shortname Inf_Seg_Proyecto5
-moosh course-config-set course 21 shortname Inf_Seg_Proyecto6
-moosh course-config-set course 22 shortname Inf_Seg_English
-moosh course-config-set course 23 shortname Inf_Seg_Atencion
-moosh course-config-set course 24 shortname Inf_Seg_Religion
-moosh course-config-set course 25 shortname Inf_Seg_Aleman
-moosh course-config-set course 26 shortname Inf_Seg_Frances
-moosh course-config-set course 27 shortname Inf_Seg_Aragones
-moosh course-config-set course 28 shortname Inf_Seg_Catalan
-moosh course-config-set course 29 shortname Inf_Ter_Proyecto1
-moosh course-config-set course 30 shortname Inf_Ter_Proyecto2
-moosh course-config-set course 31 shortname Inf_Ter_Proyecto3
-moosh course-config-set course 32 shortname Inf_Ter_Proyecto4
-moosh course-config-set course 33 shortname Inf_Ter_Proyecto5
-moosh course-config-set course 34 shortname Inf_Ter_Proyecto6
-moosh course-config-set course 35 shortname Inf_Ter_English
-moosh course-config-set course 36 shortname Inf_Ter_Atencion
-moosh course-config-set course 37 shortname Inf_Ter_Religion
-moosh course-config-set course 38 shortname Inf_Ter_Aleman
-moosh course-config-set course 39 shortname Inf_Ter_Frances
-moosh course-config-set course 40 shortname Inf_Ter_Aragones
-moosh course-config-set course 41 shortname Inf_Ter_Catalan
-
-moosh course-config-set course 3 fullname "Proyecto 1"
-moosh course-config-set course 4 fullname "Proyecto 2"
-moosh course-config-set course 5 fullname "Proyecto 3"
-moosh course-config-set course 6 fullname "Proyecto 4"
-moosh course-config-set course 7 fullname "Proyecto 5"
-moosh course-config-set course 8 fullname "Proyecto 6"
-moosh course-config-set course 9 fullname English
-moosh course-config-set course 10 fullname "Atención Educativa"
-moosh course-config-set course 11 fullname Religión
-moosh course-config-set course 12 fullname Alemán
-moosh course-config-set course 13 fullname Francés
-moosh course-config-set course 14 fullname Aragonés
-moosh course-config-set course 15 fullname Catalán
-moosh course-config-set course 16 fullname "Proyecto 1"
-moosh course-config-set course 17 fullname "Proyecto 2"
-moosh course-config-set course 18 fullname "Proyecto 3"
-moosh course-config-set course 19 fullname "Proyecto 4"
-moosh course-config-set course 20 fullname "Proyecto 5"
-moosh course-config-set course 21 fullname "Proyecto 6"
-moosh course-config-set course 22 fullname English
-moosh course-config-set course 23 fullname "Atención Educativa"
-moosh course-config-set course 24 fullname Religión
-moosh course-config-set course 25 fullname Alemán
-moosh course-config-set course 26 fullname Francés
-moosh course-config-set course 27 fullname Aragonés
-moosh course-config-set course 28 fullname Catalán
-moosh course-config-set course 29 fullname "Proyecto 1"
-moosh course-config-set course 30 fullname "Proyecto 2"
-moosh course-config-set course 31 fullname "Proyecto 3"
-moosh course-config-set course 32 fullname "Proyecto 4"
-moosh course-config-set course 33 fullname "Proyecto 5"
-moosh course-config-set course 34 fullname "Proyecto 6"
-moosh course-config-set course 35 fullname English
-moosh course-config-set course 36 fullname "Atención Educativa"
-moosh course-config-set course 37 fullname Religión
-moosh course-config-set course 38 fullname Alemán
-moosh course-config-set course 39 fullname Francés
-moosh course-config-set course 40 fullname Aragonés
-moosh course-config-set course 41 fullname Catalán
-
-# Importing courses in pri
-categories="31 32 33 34 35 36"
-
-for category in $categories; do
-  moosh course-restore mbzs/copia_de_seguridad-moodle2-course-10-20200530-0857-nu.mbz $category
-  moosh course-restore mbzs/copia_de_seguridad-moodle2-course-13-20200530-0857-nu.mbz $category
-  moosh course-restore mbzs/copia_de_seguridad-moodle2-course-14-20200530-0857-nu.mbz $category
-  moosh course-restore mbzs/copia_de_seguridad-moodle2-course-15-20200530-0857-nu.mbz $category
-  moosh course-restore mbzs/copia_de_seguridad-moodle2-course-16-20200530-0857-nu.mbz $category
-  moosh course-restore mbzs/copia_de_seguridad-moodle2-course-17-20200530-0857-nu.mbz $category
-  moosh course-restore mbzs/copia_de_seguridad-moodle2-course-18-20200530-0857-nu.mbz $category
-  moosh course-restore mbzs/copia_de_seguridad-moodle2-course-19-20200530-0857-nu.mbz $category
-  moosh course-restore mbzs/copia_de_seguridad-moodle2-course-21-20200530-0857-nu.mbz $category
-  moosh course-restore mbzs/copia_de_seguridad-moodle2-course-22-20200530-0857-nu.mbz $category
-  moosh course-restore mbzs/copia_de_seguridad-moodle2-course-23-20200530-0857-nu.mbz $category
-  moosh course-restore mbzs/copia_de_seguridad-moodle2-course-24-20200530-0857-nu.mbz $category
-  moosh course-restore mbzs/copia_de_seguridad-moodle2-course-25-20200530-0857-nu.mbz $category
-done
-
-moosh course-config-set course 42 shortname Pri_Pri_Lengua
-moosh course-config-set course 43 shortname Pri_Pri_Sociales
-moosh course-config-set course 44 shortname Pri_Pri_Matematicas
-moosh course-config-set course 45 shortname Pri_Pri_Ingles
-moosh course-config-set course 46 shortname Pri_Pri_EF
-moosh course-config-set course 47 shortname Pri_Pri_Religion
-moosh course-config-set course 48 shortname Pri_Pri_Valores
-moosh course-config-set course 49 shortname Pri_Pri_Artistica
-moosh course-config-set course 50 shortname Pri_Pri_Aleman
-moosh course-config-set course 51 shortname Pri_Pri_Catalan
-moosh course-config-set course 52 shortname Pri_Pri_Aragones
-moosh course-config-set course 53 shortname Pri_Pri_Frances
-moosh course-config-set course 54 shortname Pri_Pri_Naturales
-moosh course-config-set course 55 shortname Pri_Seg_Lengua
-moosh course-config-set course 56 shortname Pri_Seg_Sociales
-moosh course-config-set course 57 shortname Pri_Seg_Matematicas
-moosh course-config-set course 58 shortname Pri_Seg_Ingles
-moosh course-config-set course 59 shortname Pri_Seg_EF
-moosh course-config-set course 60 shortname Pri_Seg_Religion
-moosh course-config-set course 61 shortname Pri_Seg_Valores
-moosh course-config-set course 62 shortname Pri_Seg_Artistica
-moosh course-config-set course 63 shortname Pri_Seg_Aleman
-moosh course-config-set course 64 shortname Pri_Seg_Catalan
-moosh course-config-set course 65 shortname Pri_Seg_Aragones
-moosh course-config-set course 66 shortname Pri_Seg_Frances
-moosh course-config-set course 67 shortname Pri_Seg_Naturales
-moosh course-config-set course 68 shortname Pri_Ter_Lengua
-moosh course-config-set course 69 shortname Pri_Ter_Sociales
-moosh course-config-set course 70 shortname Pri_Ter_Matematicas
-moosh course-config-set course 71 shortname Pri_Ter_Ingles
-moosh course-config-set course 72 shortname Pri_Ter_EF
-moosh course-config-set course 73 shortname Pri_Ter_Religion
-moosh course-config-set course 74 shortname Pri_Ter_Valores
-moosh course-config-set course 75 shortname Pri_Ter_Artistica
-moosh course-config-set course 76 shortname Pri_Ter_Aleman
-moosh course-config-set course 77 shortname Pri_Ter_Catalan
-moosh course-config-set course 78 shortname Pri_Ter_Aragones
-moosh course-config-set course 79 shortname Pri_Ter_Frances
-moosh course-config-set course 80 shortname Pri_Ter_Naturales
-moosh course-config-set course 81 shortname Pri_Cua_Lengua
-moosh course-config-set course 82 shortname Pri_Cua_Sociales
-moosh course-config-set course 83 shortname Pri_Cua_Matematicas
-moosh course-config-set course 84 shortname Pri_Cua_Ingles
-moosh course-config-set course 85 shortname Pri_Cua_EF
-moosh course-config-set course 86 shortname Pri_Cua_Religion
-moosh course-config-set course 87 shortname Pri_Cua_Valores
-moosh course-config-set course 88 shortname Pri_Cua_Artistica
-moosh course-config-set course 89 shortname Pri_Cua_Aleman
-moosh course-config-set course 90 shortname Pri_Cua_Catalan
-moosh course-config-set course 91 shortname Pri_Cua_Aragones
-moosh course-config-set course 92 shortname Pri_Cua_Frances
-moosh course-config-set course 93 shortname Pri_Cua_Naturales
-moosh course-config-set course 94 shortname Pri_Qui_Lengua
-moosh course-config-set course 95 shortname Pri_Qui_Sociales
-moosh course-config-set course 96 shortname Pri_Qui_Matematicas
-moosh course-config-set course 97 shortname Pri_Qui_Ingles
-moosh course-config-set course 98 shortname Pri_Qui_EF
-moosh course-config-set course 99 shortname Pri_Qui_Religion
-moosh course-config-set course 100 shortname Pri_Qui_Valores
-moosh course-config-set course 101 shortname Pri_Qui_Artistica
-moosh course-config-set course 102 shortname Pri_Qui_Aleman
-moosh course-config-set course 103 shortname Pri_Qui_Catalan
-moosh course-config-set course 104 shortname Pri_Qui_Aragones
-moosh course-config-set course 105 shortname Pri_Qui_Frances
-moosh course-config-set course 106 shortname Pri_Qui_Naturales
-moosh course-config-set course 107 shortname Pri_Sex_Lengua
-moosh course-config-set course 108 shortname Pri_Sex_Sociales
-moosh course-config-set course 109 shortname Pri_Sex_Matematicas
-moosh course-config-set course 110 shortname Pri_Sex_Ingles
-moosh course-config-set course 111 shortname Pri_Sex_EF
-moosh course-config-set course 112 shortname Pri_Sex_Religion
-moosh course-config-set course 113 shortname Pri_Sex_Valores
-moosh course-config-set course 114 shortname Pri_Sex_Artistica
-moosh course-config-set course 115 shortname Pri_Sex_Aleman
-moosh course-config-set course 116 shortname Pri_Sex_Catalan
-moosh course-config-set course 117 shortname Pri_Sex_Aragones
-moosh course-config-set course 118 shortname Pri_Sex_Frances
-moosh course-config-set course 119 shortname Pri_Sex_Naturales
-
-moosh course-config-set course 42 fullname Lengua y Literatura
-moosh course-config-set course 43 fullname Ciencias Sociales
-moosh course-config-set course 44 fullname Matemáticas
-moosh course-config-set course 45 fullname English
-moosh course-config-set course 46 fullname Educación Física
-moosh course-config-set course 47 fullname Religión
-moosh course-config-set course 48 fullname Valores Sociales y Cívicos
-moosh course-config-set course 49 fullname Educación Artística
-moosh course-config-set course 50 fullname Deutsch
-moosh course-config-set course 51 fullname Catalán
-moosh course-config-set course 52 fullname Aragonés
-moosh course-config-set course 53 fullname Français
-moosh course-config-set course 54 fullname Ciencias Naturales
-moosh course-config-set course 55 fullname Lengua y Literatura
-moosh course-config-set course 56 fullname Ciencias Sociales
-moosh course-config-set course 57 fullname Matemáticas
-moosh course-config-set course 58 fullname English
-moosh course-config-set course 59 fullname Educación Física
-moosh course-config-set course 60 fullname Religión
-moosh course-config-set course 61 fullname Valores Sociales y Cívicos
-moosh course-config-set course 62 fullname Educación Artística
-moosh course-config-set course 63 fullname Deutsch
-moosh course-config-set course 64 fullname Catalán
-moosh course-config-set course 65 fullname Aragonés
-moosh course-config-set course 66 fullname Français
-moosh course-config-set course 67 fullname Ciencias Naturales
-moosh course-config-set course 68 fullname Lengua y Literatura
-moosh course-config-set course 69 fullname Ciencias Sociales
-moosh course-config-set course 70 fullname Matemáticas
-moosh course-config-set course 71 fullname English
-moosh course-config-set course 72 fullname Educación Física
-moosh course-config-set course 73 fullname Religión
-moosh course-config-set course 74 fullname Valores Sociales y Cívicos
-moosh course-config-set course 75 fullname Educación Artística
-moosh course-config-set course 76 fullname Deutsch
-moosh course-config-set course 77 fullname Catalán
-moosh course-config-set course 78 fullname Aragonés
-moosh course-config-set course 79 fullname Français
-moosh course-config-set course 80 fullname Ciencias Naturales
-moosh course-config-set course 81 fullname Lengua y Literatura
-moosh course-config-set course 82 fullname Ciencias Sociales
-moosh course-config-set course 83 fullname Matemáticas
-moosh course-config-set course 84 fullname English
-moosh course-config-set course 85 fullname Educación Física
-moosh course-config-set course 86 fullname Religión
-moosh course-config-set course 87 fullname Valores Sociales y Cívicos
-moosh course-config-set course 88 fullname Educación Artística
-moosh course-config-set course 89 fullname Deutsch
-moosh course-config-set course 90 fullname Catalán
-moosh course-config-set course 91 fullname Aragonés
-moosh course-config-set course 92 fullname Français
-moosh course-config-set course 93 fullname Ciencias Naturales
-moosh course-config-set course 94 fullname Lengua y Literatura
-moosh course-config-set course 95 fullname Ciencias Sociales
-moosh course-config-set course 96 fullname Matemáticas
-moosh course-config-set course 97 fullname English
-moosh course-config-set course 98 fullname Educación Física
-moosh course-config-set course 99 fullname Religión
-moosh course-config-set course 100 fullname Valores Sociales y Cívicos
-moosh course-config-set course 101 fullname Educación Artística
-moosh course-config-set course 102 fullname Deutsch
-moosh course-config-set course 103 fullname Catalán
-moosh course-config-set course 104 fullname Aragonés
-moosh course-config-set course 105 fullname Français
-moosh course-config-set course 106 fullname Ciencias Naturales
-moosh course-config-set course 107 fullname Lengua y Literatura
-moosh course-config-set course 108 fullname Ciencias Sociales
-moosh course-config-set course 109 fullname Matemáticas
-moosh course-config-set course 110 fullname English
-moosh course-config-set course 111 fullname Educación Física
-moosh course-config-set course 112 fullname Religión
-moosh course-config-set course 113 fullname Valores Sociales y Cívicos
-moosh course-config-set course 114 fullname Educación Artística
-moosh course-config-set course 115 fullname Deutsch
-moosh course-config-set course 116 fullname Catalán
-moosh course-config-set course 117 fullname Aragonés
-moosh course-config-set course 118 fullname Français
-moosh course-config-set course 119 fullname Ciencias Naturales
-
-# Populate category 4
-
-moosh course-restore /init-scripts/mbzs/copia_de_seguridad-moodle2-course-55-20200530-0856-nu.mbz 37
-moosh course-restore /init-scripts/mbzs/copia_de_seguridad-moodle2-course-39-20200530-0857-nu.mbz 37
-moosh course-restore /init-scripts/mbzs/copia_de_seguridad-moodle2-course-40-20200530-0857-nu.mbz 37
-moosh course-restore /init-scripts/mbzs/copia_de_seguridad-moodle2-course-41-20200530-0857-nu.mbz 37
-moosh course-restore /init-scripts/mbzs/copia_de_seguridad-moodle2-course-42-20200530-0857-nu.mbz 37
-moosh course-restore /init-scripts/mbzs/copia_de_seguridad-moodle2-course-43-20200530-0856-nu.mbz 37
-
-moosh course-config-set course 120 shortname p1
-moosh course-config-set course 121 shortname p2
-moosh course-config-set course 122 shortname p3
-moosh course-config-set course 123 shortname p4
-moosh course-config-set course 124 shortname p5
-moosh course-config-set course 125 shortname p6
-
-moosh course-config-set course 120 fullname "Proyecto 1"
-moosh course-config-set course 121 fullname "Proyecto 2"
-moosh course-config-set course 122 fullname "Proyecto 3"
-moosh course-config-set course 123 fullname "Proyecto 4"
-moosh course-config-set course 124 fullname "Proyecto 5"
-moosh course-config-set course 125 fullname "Proyecto 6"
-
-# Populate category 
-
-moosh course-restore /init-scripts/mbzs/copia_de_seguridad-moodle2-course-27-20200530-0856-nu.mbz 4
-moosh course-restore /init-scripts/mbzs/copia_de_seguridad-moodle2-course-28-20200530-0857-nu.mbz 4
-moosh course-restore /init-scripts/mbzs/copia_de_seguridad-moodle2-course-33-20200530-0857-nu.mbz 4
-moosh course-restore /init-scripts/mbzs/copia_de_seguridad-moodle2-course-54-20200530-0857-nu.mbz 4
-
-moosh course-config-set course 126 shortname Claustro
-moosh course-config-set course 127 shortname CCP
-moosh course-config-set course 128 shortname Equipo_Directivo
-moosh course-config-set course 129 shortname Equipos_Didacticos
-
-moosh course-config-set course 126 fullname "Claustro"
-moosh course-config-set course 127 fullname "CCP"
-moosh course-config-set course 128 fullname "Equipo Directivo"
-moosh course-config-set course 129 fullname "Equipos Didácticos"
+moosh course-restore /init-scripts/mbzs/35_ceip.mbz 21
+moosh course-config-set course 2 shortname inf_english_primero
+moosh course-config-set course 2 fullname ENGLISH 1º
+moosh course-restore /init-scripts/mbzs/36_ceip.mbz 21
+moosh course-config-set course 3 shortname inf_atencione_primero
+moosh course-config-set course 3 fullname ATENCIÓN EDUCATIVA 1º
+moosh course-restore /init-scripts/mbzs/37_ceip.mbz 21
+moosh course-config-set course 4 shortname inf_religion_primero
+moosh course-config-set course 4 fullname RELIGIÓN 1º
+moosh course-restore /init-scripts/mbzs/44_ceip.mbz 21
+moosh course-config-set course 5 shortname inf_aleman_primero
+moosh course-config-set course 5 fullname DEUTSCH 1º
+moosh course-restore /init-scripts/mbzs/45_ceip.mbz 21
+moosh course-config-set course 6 shortname inf_frances_primero
+moosh course-config-set course 6 fullname FRANÇAIS 1º
+moosh course-restore /init-scripts/mbzs/4_ceip.mbz 21
+moosh course-config-set course 7 shortname inf_proyecto5_primero
+moosh course-config-set course 7 fullname PROYECTO 5 1º
+moosh course-restore /init-scripts/mbzs/56_ceip.mbz 21
+moosh course-config-set course 8 shortname inf_aragones_primero
+moosh course-config-set course 8 fullname ARAGONÉS 1º
+moosh course-restore /init-scripts/mbzs/57_ceip.mbz 21
+moosh course-config-set course 9 shortname inf_catalan_primero
+moosh course-config-set course 9 fullname CATALÁN 1º
+moosh course-restore /init-scripts/mbzs/5_ceip.mbz 21
+moosh course-config-set course 10 shortname inf_proyecto6_primero
+moosh course-config-set course 10 fullname PROYECTO 6 1º
+moosh course-restore /init-scripts/mbzs/6_ceip.mbz 21
+moosh course-config-set course 11 shortname inf_proyecto4_primero
+moosh course-config-set course 11 fullname PROYECTO 4 1º
+moosh course-restore /init-scripts/mbzs/7_ceip.mbz 21
+moosh course-config-set course 12 shortname inf_proyecto3_primero
+moosh course-config-set course 12 fullname PROYECTO 3 1º
+moosh course-restore /init-scripts/mbzs/8_ceip.mbz 21
+moosh course-config-set course 13 shortname inf_proyecto2_primero
+moosh course-config-set course 13 fullname PROYECTO 2 1º
+moosh course-restore /init-scripts/mbzs/9_ceip.mbz 21
+moosh course-config-set course 14 shortname inf_proyecto1_primero
+moosh course-config-set course 14 fullname PROYECTO 1 1º
+moosh course-restore /init-scripts/mbzs/35_ceip.mbz 22
+moosh course-config-set course 15 shortname inf_english_segundo
+moosh course-config-set course 15 fullname ENGLISH 2º
+moosh course-restore /init-scripts/mbzs/36_ceip.mbz 22
+moosh course-config-set course 16 shortname inf_atencione_segundo
+moosh course-config-set course 16 fullname ATENCIÓN EDUCATIVA 2º
+moosh course-restore /init-scripts/mbzs/37_ceip.mbz 22
+moosh course-config-set course 17 shortname inf_religion_segundo
+moosh course-config-set course 17 fullname RELIGIÓN 2º
+moosh course-restore /init-scripts/mbzs/44_ceip.mbz 22
+moosh course-config-set course 18 shortname inf_aleman_segundo
+moosh course-config-set course 18 fullname DEUTSCH 2º
+moosh course-restore /init-scripts/mbzs/45_ceip.mbz 22
+moosh course-config-set course 19 shortname inf_frances_segundo
+moosh course-config-set course 19 fullname FRANÇAIS 2º
+moosh course-restore /init-scripts/mbzs/4_ceip.mbz 22
+moosh course-config-set course 20 shortname inf_proyecto5_segundo
+moosh course-config-set course 20 fullname PROYECTO 5 2º
+moosh course-restore /init-scripts/mbzs/56_ceip.mbz 22
+moosh course-config-set course 21 shortname inf_aragones_segundo
+moosh course-config-set course 21 fullname ARAGONÉS 2º
+moosh course-restore /init-scripts/mbzs/57_ceip.mbz 22
+moosh course-config-set course 22 shortname inf_catalan_segundo
+moosh course-config-set course 22 fullname CATALÁN 2º
+moosh course-restore /init-scripts/mbzs/5_ceip.mbz 22
+moosh course-config-set course 23 shortname inf_proyecto6_segundo
+moosh course-config-set course 23 fullname PROYECTO 6 2º
+moosh course-restore /init-scripts/mbzs/6_ceip.mbz 22
+moosh course-config-set course 24 shortname inf_proyecto4_segundo
+moosh course-config-set course 24 fullname PROYECTO 4 2º
+moosh course-restore /init-scripts/mbzs/7_ceip.mbz 22
+moosh course-config-set course 25 shortname inf_proyecto3_segundo
+moosh course-config-set course 25 fullname PROYECTO 3 2º
+moosh course-restore /init-scripts/mbzs/8_ceip.mbz 22
+moosh course-config-set course 26 shortname inf_proyecto2_segundo
+moosh course-config-set course 26 fullname PROYECTO 2 2º
+moosh course-restore /init-scripts/mbzs/9_ceip.mbz 22
+moosh course-config-set course 27 shortname inf_proyecto1_segundo
+moosh course-config-set course 27 fullname PROYECTO 1 2º
+moosh course-restore /init-scripts/mbzs/35_ceip.mbz 23
+moosh course-config-set course 28 shortname inf_english_tercero
+moosh course-config-set course 28 fullname ENGLISH 3º
+moosh course-restore /init-scripts/mbzs/36_ceip.mbz 23
+moosh course-config-set course 29 shortname inf_atencione_tercero
+moosh course-config-set course 29 fullname ATENCIÓN EDUCATIVA 3º
+moosh course-restore /init-scripts/mbzs/37_ceip.mbz 23
+moosh course-config-set course 30 shortname inf_religion_tercero
+moosh course-config-set course 30 fullname RELIGIÓN 3º
+moosh course-restore /init-scripts/mbzs/44_ceip.mbz 23
+moosh course-config-set course 31 shortname inf_aleman_tercero
+moosh course-config-set course 31 fullname DEUTSCH 3º
+moosh course-restore /init-scripts/mbzs/45_ceip.mbz 23
+moosh course-config-set course 32 shortname inf_frances_tercero
+moosh course-config-set course 32 fullname FRANÇAIS 3º
+moosh course-restore /init-scripts/mbzs/4_ceip.mbz 23
+moosh course-config-set course 33 shortname inf_proyecto5_tercero
+moosh course-config-set course 33 fullname PROYECTO 5 3º
+moosh course-restore /init-scripts/mbzs/56_ceip.mbz 23
+moosh course-config-set course 34 shortname inf_aragones_tercero
+moosh course-config-set course 34 fullname ARAGONÉS 3º
+moosh course-restore /init-scripts/mbzs/57_ceip.mbz 23
+moosh course-config-set course 35 shortname inf_catalan_tercero
+moosh course-config-set course 35 fullname CATALÁN 3º
+moosh course-restore /init-scripts/mbzs/5_ceip.mbz 23
+moosh course-config-set course 36 shortname inf_proyecto6_tercero
+moosh course-config-set course 36 fullname PROYECTO 6 3º
+moosh course-restore /init-scripts/mbzs/6_ceip.mbz 23
+moosh course-config-set course 37 shortname inf_proyecto4_tercero
+moosh course-config-set course 37 fullname PROYECTO 4 3º
+moosh course-restore /init-scripts/mbzs/7_ceip.mbz 23
+moosh course-config-set course 38 shortname inf_proyecto3_tercero
+moosh course-config-set course 38 fullname PROYECTO 3 3º
+moosh course-restore /init-scripts/mbzs/8_ceip.mbz 23
+moosh course-config-set course 39 shortname inf_proyecto2_tercero
+moosh course-config-set course 39 fullname PROYECTO 2 3º
+moosh course-restore /init-scripts/mbzs/9_ceip.mbz 23
+moosh course-config-set course 40 shortname inf_proyecto1_tercero
+moosh course-config-set course 40 fullname PROYECTO 1 3º
+moosh course-restore /init-scripts/mbzs/10_ceip.mbz 31
+moosh course-config-set course 41 shortname lengua_primero_prim
+moosh course-config-set course 41 fullname Lengua y Literatura 1º
+moosh course-restore /init-scripts/mbzs/13_ceip.mbz 31
+moosh course-config-set course 42 shortname sociales_primero_prim
+moosh course-config-set course 42 fullname Ciencias Sociales 1º
+moosh course-restore /init-scripts/mbzs/14_ceip.mbz 31
+moosh course-config-set course 43 shortname matematicas_primero_prim
+moosh course-config-set course 43 fullname Matemáticas 1º
+moosh course-restore /init-scripts/mbzs/15_ceip.mbz 31
+moosh course-config-set course 44 shortname ingles_primero_prim
+moosh course-config-set course 44 fullname English 1º
+moosh course-restore /init-scripts/mbzs/16_ceip.mbz 31
+moosh course-config-set course 45 shortname edfisica_primero_prim
+moosh course-config-set course 45 fullname Educación Física 1º
+moosh course-restore /init-scripts/mbzs/17_ceip.mbz 31
+moosh course-config-set course 46 shortname religion_primero_prim
+moosh course-config-set course 46 fullname Religión 1º
+moosh course-restore /init-scripts/mbzs/18_ceip.mbz 31
+moosh course-config-set course 47 shortname valores_primero_prim
+moosh course-config-set course 47 fullname Valores Sociales y Cívicos 1º
+moosh course-restore /init-scripts/mbzs/19_ceip.mbz 31
+moosh course-config-set course 48 shortname artistica_primero_prim
+moosh course-config-set course 48 fullname Educación Artística 1º
+moosh course-restore /init-scripts/mbzs/21_ceip.mbz 31
+moosh course-config-set course 49 shortname aleman_primero_prim
+moosh course-config-set course 49 fullname Deutsch 1º
+moosh course-restore /init-scripts/mbzs/22_ceip.mbz 31
+moosh course-config-set course 50 shortname catalan_primero_prim
+moosh course-config-set course 50 fullname Catalán 1º
+moosh course-restore /init-scripts/mbzs/23_ceip.mbz 31
+moosh course-config-set course 51 shortname aragones_primero_prim
+moosh course-config-set course 51 fullname Aragonés 1º
+moosh course-restore /init-scripts/mbzs/24_ceip.mbz 31
+moosh course-config-set course 52 shortname francais_primero_prim
+moosh course-config-set course 52 fullname Français 1º
+moosh course-restore /init-scripts/mbzs/25_ceip.mbz 31
+moosh course-config-set course 53 shortname ciencias_primero_prim
+moosh course-config-set course 53 fullname Ciencias Naturales 1º
+moosh course-restore /init-scripts/mbzs/10_ceip.mbz 32
+moosh course-config-set course 54 shortname lengua_segundo_prim
+moosh course-config-set course 54 fullname Lengua y Literatura 2º
+moosh course-restore /init-scripts/mbzs/13_ceip.mbz 32
+moosh course-config-set course 55 shortname sociales_segundo_prim
+moosh course-config-set course 55 fullname Ciencias Sociales 2º
+moosh course-restore /init-scripts/mbzs/14_ceip.mbz 32
+moosh course-config-set course 56 shortname matematicas_segundo_prim
+moosh course-config-set course 56 fullname Matemáticas 2º
+moosh course-restore /init-scripts/mbzs/15_ceip.mbz 32
+moosh course-config-set course 57 shortname ingles_segundo_prim
+moosh course-config-set course 57 fullname English 2º
+moosh course-restore /init-scripts/mbzs/16_ceip.mbz 32
+moosh course-config-set course 58 shortname edfisica_segundo_prim
+moosh course-config-set course 58 fullname Educación Física 2º
+moosh course-restore /init-scripts/mbzs/17_ceip.mbz 32
+moosh course-config-set course 59 shortname religion_segundo_prim
+moosh course-config-set course 59 fullname Religión 2º
+moosh course-restore /init-scripts/mbzs/18_ceip.mbz 32
+moosh course-config-set course 60 shortname valores_segundo_prim
+moosh course-config-set course 60 fullname Valores Sociales y Cívicos 2º
+moosh course-restore /init-scripts/mbzs/19_ceip.mbz 32
+moosh course-config-set course 61 shortname artistica_segundo_prim
+moosh course-config-set course 61 fullname Educación Artística 2º
+moosh course-restore /init-scripts/mbzs/21_ceip.mbz 32
+moosh course-config-set course 62 shortname aleman_segundo_prim
+moosh course-config-set course 62 fullname Deutsch 2º
+moosh course-restore /init-scripts/mbzs/22_ceip.mbz 32
+moosh course-config-set course 63 shortname catalan_segundo_prim
+moosh course-config-set course 63 fullname Catalán 2º
+moosh course-restore /init-scripts/mbzs/23_ceip.mbz 32
+moosh course-config-set course 64 shortname aragones_segundo_prim
+moosh course-config-set course 64 fullname Aragonés 2º
+moosh course-restore /init-scripts/mbzs/24_ceip.mbz 32
+moosh course-config-set course 65 shortname francais_segundo_prim
+moosh course-config-set course 65 fullname Français 2º
+moosh course-restore /init-scripts/mbzs/25_ceip.mbz 32
+moosh course-config-set course 66 shortname ciencias_segundo_prim
+moosh course-config-set course 66 fullname Ciencias Naturales 2º
+moosh course-restore /init-scripts/mbzs/10_ceip.mbz 33
+moosh course-config-set course 67 shortname lengua_tercero_prim
+moosh course-config-set course 67 fullname Lengua y Literatura 3º
+moosh course-restore /init-scripts/mbzs/13_ceip.mbz 33
+moosh course-config-set course 68 shortname sociales_tercero_prim
+moosh course-config-set course 68 fullname Ciencias Sociales 3º
+moosh course-restore /init-scripts/mbzs/14_ceip.mbz 33
+moosh course-config-set course 69 shortname matematicas_tercero_prim
+moosh course-config-set course 69 fullname Matemáticas 3º
+moosh course-restore /init-scripts/mbzs/15_ceip.mbz 33
+moosh course-config-set course 70 shortname ingles_tercero_prim
+moosh course-config-set course 70 fullname English 3º
+moosh course-restore /init-scripts/mbzs/16_ceip.mbz 33
+moosh course-config-set course 71 shortname edfisica_tercero_prim
+moosh course-config-set course 71 fullname Educación Física 3º
+moosh course-restore /init-scripts/mbzs/17_ceip.mbz 33
+moosh course-config-set course 72 shortname religion_tercero_prim
+moosh course-config-set course 72 fullname Religión 3º
+moosh course-restore /init-scripts/mbzs/18_ceip.mbz 33
+moosh course-config-set course 73 shortname valores_tercero_prim
+moosh course-config-set course 73 fullname Valores Sociales y Cívicos 3º
+moosh course-restore /init-scripts/mbzs/19_ceip.mbz 33
+moosh course-config-set course 74 shortname artistica_tercero_prim
+moosh course-config-set course 74 fullname Educación Artística 3º
+moosh course-restore /init-scripts/mbzs/21_ceip.mbz 33
+moosh course-config-set course 75 shortname aleman_tercero_prim
+moosh course-config-set course 75 fullname Deutsch 3º
+moosh course-restore /init-scripts/mbzs/22_ceip.mbz 33
+moosh course-config-set course 76 shortname catalan_tercero_prim
+moosh course-config-set course 76 fullname Catalán 3º
+moosh course-restore /init-scripts/mbzs/23_ceip.mbz 33
+moosh course-config-set course 77 shortname aragones_tercero_prim
+moosh course-config-set course 77 fullname Aragonés 3º
+moosh course-restore /init-scripts/mbzs/24_ceip.mbz 33
+moosh course-config-set course 78 shortname francais_tercero_prim
+moosh course-config-set course 78 fullname Français 3º
+moosh course-restore /init-scripts/mbzs/25_ceip.mbz 33
+moosh course-config-set course 79 shortname ciencias_tercero_prim
+moosh course-config-set course 79 fullname Ciencias Naturales 3º
+moosh course-restore /init-scripts/mbzs/10_ceip.mbz 34
+moosh course-config-set course 80 shortname lengua_cuarto_prim
+moosh course-config-set course 80 fullname Lengua y Literatura 4º
+moosh course-restore /init-scripts/mbzs/13_ceip.mbz 34
+moosh course-config-set course 81 shortname sociales_cuarto_prim
+moosh course-config-set course 81 fullname Ciencias Sociales 4º
+moosh course-restore /init-scripts/mbzs/14_ceip.mbz 34
+moosh course-config-set course 82 shortname matematicas_cuarto_prim
+moosh course-config-set course 82 fullname Matemáticas 4º
+moosh course-restore /init-scripts/mbzs/15_ceip.mbz 34
+moosh course-config-set course 83 shortname ingles_cuarto_prim
+moosh course-config-set course 83 fullname English 4º
+moosh course-restore /init-scripts/mbzs/16_ceip.mbz 34
+moosh course-config-set course 84 shortname edfisica_cuarto_prim
+moosh course-config-set course 84 fullname Educación Física 4º
+moosh course-restore /init-scripts/mbzs/17_ceip.mbz 34
+moosh course-config-set course 85 shortname religion_cuarto_prim
+moosh course-config-set course 85 fullname Religión 4º
+moosh course-restore /init-scripts/mbzs/18_ceip.mbz 34
+moosh course-config-set course 86 shortname valores_cuarto_prim
+moosh course-config-set course 86 fullname Valores Sociales y Cívicos 4º
+moosh course-restore /init-scripts/mbzs/19_ceip.mbz 34
+moosh course-config-set course 87 shortname artistica_cuarto_prim
+moosh course-config-set course 87 fullname Educación Artística 4º
+moosh course-restore /init-scripts/mbzs/21_ceip.mbz 34
+moosh course-config-set course 88 shortname aleman_cuarto_prim
+moosh course-config-set course 88 fullname Deutsch 4º
+moosh course-restore /init-scripts/mbzs/22_ceip.mbz 34
+moosh course-config-set course 89 shortname catalan_cuarto_prim
+moosh course-config-set course 89 fullname Catalán 4º
+moosh course-restore /init-scripts/mbzs/23_ceip.mbz 34
+moosh course-config-set course 90 shortname aragones_cuarto_prim
+moosh course-config-set course 90 fullname Aragonés 4º
+moosh course-restore /init-scripts/mbzs/24_ceip.mbz 34
+moosh course-config-set course 91 shortname francais_cuarto_prim
+moosh course-config-set course 91 fullname Français 4º
+moosh course-restore /init-scripts/mbzs/25_ceip.mbz 34
+moosh course-config-set course 92 shortname ciencias_cuarto_prim
+moosh course-config-set course 92 fullname Ciencias Naturales 4º
+moosh course-restore /init-scripts/mbzs/10_ceip.mbz 35
+moosh course-config-set course 93 shortname lengua_quinto_prim
+moosh course-config-set course 93 fullname Lengua y Literatura 5º
+moosh course-restore /init-scripts/mbzs/13_ceip.mbz 35
+moosh course-config-set course 94 shortname sociales_quinto_prim
+moosh course-config-set course 94 fullname Ciencias Sociales 5º
+moosh course-restore /init-scripts/mbzs/14_ceip.mbz 35
+moosh course-config-set course 95 shortname matematicas_quinto_prim
+moosh course-config-set course 95 fullname Matemáticas 5º
+moosh course-restore /init-scripts/mbzs/15_ceip.mbz 35
+moosh course-config-set course 96 shortname ingles_quinto_prim
+moosh course-config-set course 96 fullname English 5º
+moosh course-restore /init-scripts/mbzs/16_ceip.mbz 35
+moosh course-config-set course 97 shortname edfisica_quinto_prim
+moosh course-config-set course 97 fullname Educación Física 5º
+moosh course-restore /init-scripts/mbzs/17_ceip.mbz 35
+moosh course-config-set course 98 shortname religion_quinto_prim
+moosh course-config-set course 98 fullname Religión 5º
+moosh course-restore /init-scripts/mbzs/18_ceip.mbz 35
+moosh course-config-set course 99 shortname valores_quinto_prim
+moosh course-config-set course 99 fullname Valores Sociales y Cívicos 5º
+moosh course-restore /init-scripts/mbzs/19_ceip.mbz 35
+moosh course-config-set course 100 shortname artistica_quinto_prim
+moosh course-config-set course 100 fullname Educación Artística 5º
+moosh course-restore /init-scripts/mbzs/21_ceip.mbz 35
+moosh course-config-set course 101 shortname aleman_quinto_prim
+moosh course-config-set course 101 fullname Deutsch 5º
+moosh course-restore /init-scripts/mbzs/22_ceip.mbz 35
+moosh course-config-set course 102 shortname catalan_quinto_prim
+moosh course-config-set course 102 fullname Catalán 5º
+moosh course-restore /init-scripts/mbzs/23_ceip.mbz 35
+moosh course-config-set course 103 shortname aragones_quinto_prim
+moosh course-config-set course 103 fullname Aragonés 5º
+moosh course-restore /init-scripts/mbzs/24_ceip.mbz 35
+moosh course-config-set course 104 shortname francais_quinto_prim
+moosh course-config-set course 104 fullname Français 5º
+moosh course-restore /init-scripts/mbzs/25_ceip.mbz 35
+moosh course-config-set course 105 shortname ciencias_quinto_prim
+moosh course-config-set course 105 fullname Ciencias Naturales 5º
+moosh course-restore /init-scripts/mbzs/10_ceip.mbz 36
+moosh course-config-set course 106 shortname lengua_sexto_prim
+moosh course-config-set course 106 fullname Lengua y Literatura 6º
+moosh course-restore /init-scripts/mbzs/13_ceip.mbz 36
+moosh course-config-set course 107 shortname sociales_sexto_prim
+moosh course-config-set course 107 fullname Ciencias Sociales 6º
+moosh course-restore /init-scripts/mbzs/14_ceip.mbz 36
+moosh course-config-set course 108 shortname matematicas_sexto_prim
+moosh course-config-set course 108 fullname Matemáticas 6º
+moosh course-restore /init-scripts/mbzs/15_ceip.mbz 36
+moosh course-config-set course 109 shortname ingles_sexto_prim
+moosh course-config-set course 109 fullname English 6º
+moosh course-restore /init-scripts/mbzs/16_ceip.mbz 36
+moosh course-config-set course 110 shortname edfisica_sexto_prim
+moosh course-config-set course 110 fullname Educación Física 6º
+moosh course-restore /init-scripts/mbzs/17_ceip.mbz 36
+moosh course-config-set course 111 shortname religion_sexto_prim
+moosh course-config-set course 111 fullname Religión 6º
+moosh course-restore /init-scripts/mbzs/18_ceip.mbz 36
+moosh course-config-set course 112 shortname valores_sexto_prim
+moosh course-config-set course 112 fullname Valores Sociales y Cívicos 6º
+moosh course-restore /init-scripts/mbzs/19_ceip.mbz 36
+moosh course-config-set course 113 shortname artistica_sexto_prim
+moosh course-config-set course 113 fullname Educación Artística 6º
+moosh course-restore /init-scripts/mbzs/21_ceip.mbz 36
+moosh course-config-set course 114 shortname aleman_sexto_prim
+moosh course-config-set course 114 fullname Deutsch 6º
+moosh course-restore /init-scripts/mbzs/22_ceip.mbz 36
+moosh course-config-set course 115 shortname catalan_sexto_prim
+moosh course-config-set course 115 fullname Catalán 6º
+moosh course-restore /init-scripts/mbzs/23_ceip.mbz 36
+moosh course-config-set course 116 shortname aragones_sexto_prim
+moosh course-config-set course 116 fullname Aragonés 6º
+moosh course-restore /init-scripts/mbzs/24_ceip.mbz 36
+moosh course-config-set course 117 shortname francais_sexto_prim
+moosh course-config-set course 117 fullname Français 6º
+moosh course-restore /init-scripts/mbzs/25_ceip.mbz 36
+moosh course-config-set course 118 shortname ciencias_sexto_prim
+moosh course-config-set course 118 fullname Ciencias Naturales 6º
+moosh course-restore /init-scripts/mbzs/27_ceip.mbz 4
+moosh course-config-set course 119 shortname claustro
+moosh course-config-set course 119 fullname Claustro 
+moosh course-restore /init-scripts/mbzs/28_ceip.mbz 4
+moosh course-config-set course 120 shortname ccp
+moosh course-config-set course 120 fullname CCP 
+moosh course-restore /init-scripts/mbzs/33_ceip.mbz 4
+moosh course-config-set course 121 shortname equipo-directivo
+moosh course-config-set course 121 fullname Equipo directivo 
+moosh course-restore /init-scripts/mbzs/54_ceip.mbz 4
+moosh course-config-set course 122 shortname equipos
+moosh course-config-set course 122 fullname Equipos didácticos 
+moosh course-restore /init-scripts/mbzs/9_ceip.mbz 37
+moosh course-config-set course 123 shortname proyecto_prim__1
+moosh course-config-set course 123 fullname PROYECTO  1
+moosh course-restore /init-scripts/mbzs/8_ceip.mbz 37
+moosh course-config-set course 124 shortname proyecto_prim__2
+moosh course-config-set course 124 fullname PROYECTO  2
+moosh course-restore /init-scripts/mbzs/7_ceip.mbz 37
+moosh course-config-set course 125 shortname proyecto_prim__3
+moosh course-config-set course 125 fullname PROYECTO  3
+moosh course-restore /init-scripts/mbzs/6_ceip.mbz 37
+moosh course-config-set course 126 shortname proyecto_prim__4
+moosh course-config-set course 126 fullname PROYECTO  4
+moosh course-restore /init-scripts/mbzs/5_ceip.mbz 37
+moosh course-config-set course 127 shortname proyecto_prim__5
+moosh course-config-set course 127 fullname PROYECTO  5
+moosh course-restore /init-scripts/mbzs/4_ceip.mbz 37
+moosh course-config-set course 128 shortname proyecto_prim__6
+moosh course-config-set course 128 fullname PROYECTO  6

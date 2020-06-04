@@ -1,15 +1,14 @@
 <categories>
-    <category oldid='1' name='Miscelánea'></category>
-    <category oldid='9' idnumber='2' name='ESO'>
-        <category oldid='11' idnumber='21' name='Primero'></category>
-        <category oldid='12' idnumber='22' name='Segundo'></category>
-        <category oldid='13' idnumber='23' name='Tercero'></category>
-        <category oldid='14' idnumber='24' name='Cuarto'></category>
+    <category idnumber='5' name='ESO'>
+        <category idnumber='51' name='Primero'></category>
+        <category idnumber='52' name='Segundo'></category>
+        <category idnumber='53' name='Tercero'></category>
+        <category idnumber='54' name='Cuarto'></category>
     </category>
-    <category oldid='10' idnumber='3' name='Bachillerato'>
-        <category oldid='3' idnumber='31' name='Primero'></category>
-        <category oldid='4' idnumber='32' name='Segundo'></category>
-        <category oldid='30' idnumber='30' name='Proyectos de trabajo'></category>
+    <category idnumber='6' name='Bachillerato'>
+        <category idnumber='61' name='Primero'></category>
+        <category idnumber='62' name='Segundo'></category>
+        <category idnumber='60' name='Proyectos de trabajo'></category>
     </category>
-    <category oldid='14' name='Sala de profesorado'></category>
+    <category idnumber='4' name='Sala de profesorado'></category>
 </categories>

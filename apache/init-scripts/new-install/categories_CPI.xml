@@ -13,16 +13,16 @@
         <category idnumber='36' name='Sexto'></category>
         <category idnumber='37' name='Proyectos de trabajo'></category>
     </category>
-    <category idnumber='4' name='ESO'>
-        <category idnumber='41' name='Primero'></category>
-        <category idnumber='42' name='Segundo'></category>
-        <category idnumber='43' name='Tercero'></category>
-        <category idnumber='44' name='Cuarto'></category>
-    </category>
-    <category idnumber='5' name='Bachillerato'>
+    <category idnumber='5' name='ESO'>
         <category idnumber='51' name='Primero'></category>
         <category idnumber='52' name='Segundo'></category>
-        <category idnumber='50' name='Proyectos de trabajo'></category>
+        <category idnumber='53' name='Tercero'></category>
+        <category idnumber='54' name='Cuarto'></category>
     </category>
-    <category idnumber='6' name='Sala de profesorado'></category>
+    <category idnumber='6' name='Bachillerato'>
+        <category idnumber='61' name='Primero'></category>
+        <category idnumber='62' name='Segundo'></category>
+        <category idnumber='60' name='Proyectos de trabajo'></category>
+    </category>
+    <category idnumber='4' name='Sala de profesorado'></category>
 </categories>
