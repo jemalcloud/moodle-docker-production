@@ -37,5 +37,5 @@ CRON_BROWSER_PASS=cronpass
 MOODLE_MANAGER=mail@manageres
 
 # Installation specific
-INSTALL_TYPE=NEW_INSTALL
+INSTALL_TYPE=new-install
 SCHOOL_TYPE=CPI
