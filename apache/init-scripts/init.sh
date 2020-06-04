@@ -15,7 +15,7 @@ do
 	# after installation we disable this files so no exec is done after container restart
 	if [ -x "$f" ]; then
 		echo >&2 "$f executing..."
-		sudo -H -E -u www-data $f
+		$f
 		echo >&2 "$f executed!"
 	else
 		echo >&2 "$f skipped, no x permission"
