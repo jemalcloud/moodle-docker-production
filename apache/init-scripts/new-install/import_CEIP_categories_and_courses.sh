@@ -19,7 +19,7 @@ moosh course-config-set course 3 shortname proyecto4_inf_primero
 moosh course-config-set course 3 fullname "PROYECTO 4 1º"
 moosh course-restore /init-scripts/mbzs/12_ceip.mbz 3
 moosh course-config-set course 4 shortname proyecto3_inf_primero
-moosh course-config-set course 4 fullname "PROYECTO 3 1º"
+moosh course-config-set course 4 fullname "PROYECTO 3 1º"cd 
 moosh course-restore /init-scripts/mbzs/13_ceip.mbz 3
 moosh course-config-set course 5 shortname proyecto2_inf_primero
 moosh course-config-set course 5 fullname "PROYECTO 2 1º"
