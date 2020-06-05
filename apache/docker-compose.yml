@@ -20,7 +20,6 @@ services:
       MOODLE_SITE_NAME: "${MOODLE_SITE_NAME}"
       MOODLE_SITE_FULLNAME: "${MOODLE_SITE_FULLNAME}"
       SSL_PROXY: "${SSL_PROXY}"
-      TOOL_GENERATOR_PASSWORD: "${TOOL_GENERATOR_PASSWORD}"
       SMTP_HOSTS: "${SMTP_HOSTS}"
       SMTP_USER: "${SMTP_USER}"
       SMTP_PASSWORD: "${SMTP_PASSWORD}"
@@ -42,7 +41,7 @@ services:
       # just for production, not working on mac
       # - /etc/timezone:/etc/timezone:ro
       # - /etc/localtime:/etc/localtime:ro
-  
+
   db:
     hostname: db
     container_name: db
