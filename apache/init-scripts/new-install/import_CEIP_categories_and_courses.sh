@@ -374,21 +374,21 @@ moosh course-config-set course 121 fullname "Equipo directivo "
 moosh course-restore /init-scripts/mbzs/110_ceip.mbz 13
 moosh course-config-set course 122 shortname equipos
 moosh course-config-set course 122 fullname "Equipos didácticos "
-moosh course-restore /init-scripts/mbzs/9_ceip.mbz 14
-moosh course-config-set course 123 shortname proyecto_prim__1
+moosh course-restore /init-scripts/mbzs/14_ceip.mbz 14
+moosh course-config-set course 123 shortname proyecto_prim_1
 moosh course-config-set course 123 fullname "PROYECTO  1"
-moosh course-restore /init-scripts/mbzs/8_ceip.mbz 14
-moosh course-config-set course 124 shortname proyecto_prim__2
+moosh course-restore /init-scripts/mbzs/13_ceip.mbz 14
+moosh course-config-set course 124 shortname proyecto_prim_2
 moosh course-config-set course 124 fullname "PROYECTO  2"
-moosh course-restore /init-scripts/mbzs/7_ceip.mbz 14
-moosh course-config-set course 125 shortname proyecto_prim__3
+moosh course-restore /init-scripts/mbzs/12_ceip.mbz 14
+moosh course-config-set course 125 shortname proyecto_prim_3
 moosh course-config-set course 125 fullname "PROYECTO  3"
-moosh course-restore /init-scripts/mbzs/6_ceip.mbz 14
-moosh course-config-set course 126 shortname proyecto_prim__4
+moosh course-restore /init-scripts/mbzs/11_ceip.mbz 14
+moosh course-config-set course 126 shortname proyecto_prim_4
 moosh course-config-set course 126 fullname "PROYECTO  4"
-moosh course-restore /init-scripts/mbzs/5_ceip.mbz 14
-moosh course-config-set course 127 shortname proyecto_prim__5
+moosh course-restore /init-scripts/mbzs/7_ceip.mbz 14
+moosh course-config-set course 127 shortname proyecto_prim_5
 moosh course-config-set course 127 fullname "PROYECTO  5"
-moosh course-restore /init-scripts/mbzs/4_ceip.mbz 14
-moosh course-config-set course 128 shortname proyecto_prim__6
+moosh course-restore /init-scripts/mbzs/10_ceip.mbz 14
+moosh course-config-set course 128 shortname proyecto_prim_6
 moosh course-config-set course 128 fullname "PROYECTO  6"
