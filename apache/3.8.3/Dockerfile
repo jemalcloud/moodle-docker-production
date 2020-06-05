@@ -1,8 +1,8 @@
 # php 7.4 not working yet, see https://tracker.moodle.org/browse/MDL-66260
-FROM php:7.3-fpm
+FROM  php:7.3-apache-buster
 LABEL MAINTAINER juanda <juandacorreo@gmail.com>
 
-ARG VERSION=3.7.6
+ARG VERSION=3.8.3
 ARG MOOSH_VERSION=0.32
 ARG COMPOSER_VERSION=1.10.6
 ENV DOCKERIZE_VERSION v0.6.1
@@ -18,6 +18,7 @@ ARG DEBIAN_FRONTEND=noninteractive
 ## extensions based on https://github.com/moodlehq/moodle-php-apache/blob/master/Dockerfile
 COPY php-extensions.sh /tmp
 RUN /tmp/php-extensions.sh
+
 
 # set recommended opcache settings 
 # see https://www.php.net/manual/en/opcache.installation.php
@@ -45,6 +46,7 @@ RUN { \
 	echo 'max_execution_time = 600'; \
 	} > /usr/local/etc/php/conf.d/uploads.ini
 
+RUN a2enmod rewrite expires
 
 RUN	echo "Installing moodle"; \
 	curl -o moodle.tar.gz -fSL "https://github.com/moodle/moodle/archive/v${VERSION}.tar.gz"; \
@@ -83,4 +85,4 @@ RUN chmod 777 /tmp && chmod +t /tmp ;\
 	chown -R www-data:www-data -R /usr/src/moodle ;\
 	chown www-data:www-data /var/www # moosh uses it
 ENTRYPOINT ["docker-entrypoint.sh"]
-CMD ["php-fpm"]
+CMD ["apache2-foreground"]

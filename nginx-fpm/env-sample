@@ -4,8 +4,6 @@ VIRTUAL_HOST=localhost
 SSL_EMAIL=technicalemail@example.com
 PHPMYADMIN_VIRTUAL_HOST=phpmyadmin.localhost
 
-
-
 # for database creation:
 MYSQL_ROOT_PASSWORD=password
 MOODLE_DB_HOST=db
@@ -14,7 +12,6 @@ MOODLE_MYSQL_USER=dbuser
 MOODLE_MYSQL_PASSWORD=dbpassword
 
 SSL_PROXY=false
-
 MOODLE_URL=http://localhost
 
 # for installing moodle, user data:
@@ -24,3 +21,17 @@ MOODLE_ADMIN_EMAIL=example@example.com
 MOODLE_LANG=en
 MOODLE_SITE_NAME=MySite
 MOODLE_SITE_FULLNAME=This is my awesome site
+
+# Needs for init-scripts and plugin configuration
+TOOL_GENERATOR_PASSWORD=password
+SMTP_HOSTS=smtp.host.com
+SMTP_USER=user@localhost
+SMTP_PASSWORD=password
+SMTP_MAXBULK=100
+NO_REPLY_ADDRESS=noreply@localhost
+CRON_BROWSER_PASS=cronpass
+MOODLE_MANAGER=mail@manageres
+
+# Installation specific
+INSTALL_TYPE=new-install
+SCHOOL_TYPE=CPI

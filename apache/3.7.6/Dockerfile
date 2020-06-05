@@ -24,7 +24,7 @@ RUN /tmp/php-extensions.sh
 # see https://www.php.net/manual/en/opcache.installation.php
 ## see https://docs.moodle.org/38/en/OPcache
 RUN { \
-	echo 'opcache.memory_consumption=128'; \
+	echo 'opcache.memory_consumption=1024'; \
 	echo 'opcache.interned_strings_buffer=8'; \
 	echo 'opcache.max_accelerated_files=10000'; \
 	echo 'opcache.revalidate_freq=60'; \

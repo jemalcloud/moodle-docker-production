@@ -7,7 +7,7 @@
 
 
 # Load sensitive data or configurable data from a .env file
-export $(grep -E -v '^#' /init-scripts/.env | xargs)
+#export $(grep -E -v '^#' /init-scripts/.env | xargs)
 
 # Config smtp
 echo >&2 "Configuring smtp..."
@@ -71,6 +71,6 @@ moosh config-set enablegravatar 1
 
 # import categories and courses
 echo >&2 "Importing categories and courses..."
-/init-scripts/import_${SCHOOL_TYPE}_categories_and_courses.sh
+/init-scripts/${INSTALL_TYPE}/import_${SCHOOL_TYPE}_categories_and_courses.sh
 
 # Change language configuration

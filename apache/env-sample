@@ -21,6 +21,21 @@ MOODLE_URL=http://localhost
 MOODLE_ADMIN_USER=adminuser
 MOODLE_ADMIN_PASSWORD=adminpassword
 MOODLE_ADMIN_EMAIL=example@example.com
-MOODLE_LANG=es
+MOODLE_LANG=en
 MOODLE_SITE_NAME=MySite
 MOODLE_SITE_FULLNAME=This is my awesome site
+
+
+# Needs for init-scripts and plugin configuration
+TOOL_GENERATOR_PASSWORD=password
+SMTP_HOSTS=smtp.host.com
+SMTP_USER=user@localhost
+SMTP_PASSWORD=password
+SMTP_MAXBULK=100
+NO_REPLY_ADDRESS=noreply@localhost
+CRON_BROWSER_PASS=cronpass
+MOODLE_MANAGER=mail@manageres
+
+# Installation specific
+INSTALL_TYPE=new-install
+SCHOOL_TYPE=CPI
