@@ -26,8 +26,7 @@ MOODLE_SITE_NAME=MySite
 MOODLE_SITE_FULLNAME=This is my awesome site
 
 
-# Needs for init-scripts and plugin configuration
-TOOL_GENERATOR_PASSWORD=password
+# Needs for init-scripts and plugin configurations
 SMTP_HOSTS=smtp.host.com
 SMTP_USER=user@localhost
 SMTP_PASSWORD=password
