@@ -34,6 +34,7 @@ SMTP_MAXBULK=100
 NO_REPLY_ADDRESS=noreply@localhost
 CRON_BROWSER_PASS=cronpass
 MOODLE_MANAGER=mail@manageres
+MANAGER_PASSWORD=myverystrongpass
 
 # Installation specific
 INSTALL_TYPE=new-install
