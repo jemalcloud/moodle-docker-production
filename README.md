@@ -70,6 +70,7 @@ Are extremely welcome!
 * Need to requests an airnotifierkey in your-moodle-url/admin/settings.php?section=messagesettingairnzotifier
 * Need to enable notifications through mobile in your-moodle-url/admin/message.php
 * Need to install H5P Modules through web interface by adding an H5P activity to a course and, then, install all the modules
-* Need to upload courses
 * Need to upload users
 * Need to configure caché through your-moodle-url/cache/admin.php
+* Need to configure frontpage _nothing_ and frontpageloggedin _Cursos inscritos_, _Mostrar items de noticias_, nothing else in your-moodle-url/admin/settings.php?section=frontpagesettings
+* Need to add Policies and agreements in your-moodle-url/admin/tool/policy/managedocs.php?archived=0 as it is in moodle-model/admin/tool/policy/managedocs.php?archived=0
