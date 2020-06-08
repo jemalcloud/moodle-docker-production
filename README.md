@@ -67,6 +67,7 @@ Are extremely welcome!
 ## After installing. TODOs via web interface
 
 * Need to register the site in yout-moodle-url/admin/registration/index.php?returnurl=%2Fadmin%2Findex.php
+* Need to enable mobile messages in your-moodle-url/admin/message.php
 * Need to requests an airnotifierkey in your-moodle-url/admin/settings.php?section=messagesettingairnzotifier
 * Need to enable notifications through mobile in your-moodle-url/admin/message.php
 * Need to install H5P Modules through web interface by adding an H5P activity to a course and, then, install all the modules
