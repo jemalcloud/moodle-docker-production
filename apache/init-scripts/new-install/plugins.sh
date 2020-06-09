@@ -57,7 +57,8 @@ moosh config-set sqlsyntaxhighlight 1 block_configurable_reports
 
 echo >&2 "Configuring jitsi..."
 moosh config-set jitsi_livebutton 1
-moosh config-set jitsi_livebutton 1
+moosh config-set jitsi_shareyoutube 1
+moosh config-set jitsi_id nameandsurname
 moosh config-set jitsi_finishandreturn 1
 
 echo >&2 "Configuring h5p..."
