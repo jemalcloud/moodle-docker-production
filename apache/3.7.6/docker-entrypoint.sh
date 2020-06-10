@@ -16,6 +16,8 @@ process_init_files() {
 				if [ -x "$f" ]; then
 					echo >&2 "$f executing..."
 					sudo -H -E -u www-data $f
+					# remove permissions so just once executed:
+					chmod -x $f
 					echo >&2 "$f executed!"
 				else
 					echo >&2 "$f skipped, no x permission"
