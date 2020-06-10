@@ -86,6 +86,7 @@ moosh config-set colourname6 "Rojo" format_tiles
 moosh config-set modalresources pdf,url,html format_tiles
 moosh config-set showprogresssphototiles 0 format_tiles
 moosh config-set showseczerocoursewide 1 format_tiles
+moosh config-set allowphototiles 1 format_tiles
 
 set -x
 echo >&2 "Plugins configurated!"
