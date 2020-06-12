@@ -736,19 +736,19 @@ moosh course-restore /init-scripts/mbzs/217-edicion-segundo-bach-artes-ies.mbz 1
 moosh course-config-set course 180 shortname edicion-segundo-bach-artes
 moosh course-config-set course 180 fullname "Técnicas de edición gráfico-plástica 2º"
 
-moodle moosh -n course-config-set category 3 format topics
-moodle moosh -n course-config-set category 4 format topics
-moodle moosh -n course-config-set category 5 format topics
-moodle moosh -n course-config-set category 6 format topics
-moodle moosh -n course-config-set category 8 format topics
-moodle moosh -n course-config-set category 9 format topics
-moodle moosh -n course-config-set category 11 format topics
-moodle moosh -n course-config-set category 12 format topics
-moodle moosh -n course-config-set category 14 format topics
-moodle moosh -n course-config-set category 15 format topics
-moodle moosh -n course-config-set category 17 format topics
-moodle moosh -n course-config-set category 18 format topics
-moodle moosh -n course-config-set category 20 format topics
-moodle moosh -n course-config-set category 21 format topics
-moodle moosh -n course-config-set category 23 format topics
+moosh course-config-set category 3 format topics
+moosh course-config-set category 4 format topics
+moosh course-config-set category 5 format topics
+moosh course-config-set category 6 format topics
+moosh course-config-set category 8 format topics
+moosh course-config-set category 9 format topics
+moosh course-config-set category 11 format topics
+moosh course-config-set category 12 format topics
+moosh course-config-set category 14 format topics
+moosh course-config-set category 15 format topics
+moosh course-config-set category 17 format topics
+moosh course-config-set category 18 format topics
+moosh course-config-set category 20 format topics
+moosh course-config-set category 21 format topics
+moosh course-config-set category 23 format topics
 
