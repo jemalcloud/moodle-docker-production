@@ -66,6 +66,9 @@ moosh config-set jitsi_watermarklink https://jitsi.org
 moosh config-set jitsi_channellastcam 4
 
 
+echo >&2 "Configuring grades..."
+moosh config-set gradepointdefault 10
+
 echo >&2 "Configuring h5p..."
 moosh config-set enable_save_content_state 1 mod_hvp
 moosh config-set enable_lrs_content_types 1 mod_hvp
