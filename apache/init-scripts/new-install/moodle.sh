@@ -146,4 +146,7 @@ moosh config-set showdataretentionsummary 0 tool_dataprivacy
 
 # Creating moodle-manager
 moosh user-create --password ${MANAGER_PASSWORD} --email ${MOODLE_MANAGER} --digest 2 --city Aragón --country ES --firstname Gestorae --lastname Aeducar gestorae
-moosh user-assign-system-role gestorae manager
+moosh role-create -a manager gestora
+moosh role-update-capability gestora enrol/flatfile:manage allow 1
+moosh role-update-capability gestora enrol/flatfile:unenrol allow 1
+moosh user-assign-system-role gestorae gestora
