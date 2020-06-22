@@ -72,6 +72,7 @@ moosh config-set gradepointdefault 10
 echo >&2 "Configuring h5p..."
 moosh config-set enable_save_content_state 1 mod_hvp
 moosh config-set enable_lrs_content_types 1 mod_hvp
+moosh config-set allowframembedding 1
 
 echo >&2 "Configuring format_tiles..."
 moosh config-set hovercolour "\#ff7000" format_tiles

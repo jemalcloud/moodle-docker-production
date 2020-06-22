@@ -149,4 +149,15 @@ moosh user-create --password ${MANAGER_PASSWORD} --email ${MOODLE_MANAGER} --dig
 moosh role-create -a manager gestora
 moosh role-update-capability gestora enrol/flatfile:manage allow 1
 moosh role-update-capability gestora enrol/flatfile:unenrol allow 1
+moosh role-update-capability gestora repository/upload:view allow 1
+moosh role-update-capability gestora mod/forum:allowforcesubscribe allow 1
+moosh role-update-capability gestora atto/recordrtc:recordvideo allow 1
+moosh role-update-capability gestora atto/recordrtc:recordaudio allow 1
+moosh role-update-capability gestora tool/dataprivacy:managedataregistry allow 1
+moosh role-update-capability gestora tool/dataprivacy:managedatarequests allow 1
+moosh role-update-capability gestora tool/dataprivacy:managedataregistry allow 1
+moosh role-update-capability gestora moodle/webservice:createmobiletoken allow 1
+moosh role-update-capability gestora block/tags:myaddinstance allow 1
+moosh role-update-capability gestora block/starredcourses:myaddinstance allow 1
+moosh role-update-capability gestora block/mentees:myaddinstance allow 1
 moosh user-assign-system-role gestorae gestora
