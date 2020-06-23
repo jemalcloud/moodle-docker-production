@@ -117,14 +117,14 @@ moosh config-set enablestats 1
 # feeds
 moosh config-set enablerssfeeds 1
 
-# activities config
-moosh config-set completiondefault 0
-
 # courses
 moosh config-set enableglobalsearch 1
 moosh config-set enablecourserequests 1
 moosh config-set courserequestnotify \$\@ALL@$
 moosh config-set searchincludeallcourses 0
+
+# Completion
+moosh config-set completiondefault 0
 
 # grades
 moosh config-set gradeexport ods,txt,xml
@@ -133,6 +133,7 @@ moosh config-set grade_aggregation 10
 moosh config-set grade_aggregations_visible 0,10,13
 moosh config-set grade_report_showquickfeedback 1
 moosh config-set grade_report_user_rangedecimals 2
+moosh config-set gradepointdefault 10
 
 # themes
 moosh config-set allowthemechangeonurl 1
@@ -160,4 +161,5 @@ moosh role-update-capability gestora moodle/webservice:createmobiletoken allow 1
 moosh role-update-capability gestora block/tags:myaddinstance allow 1
 moosh role-update-capability gestora block/starredcourses:myaddinstance allow 1
 moosh role-update-capability gestora block/mentees:myaddinstance allow 1
+moosh config-set dporoles 9 tool_dataprivacy
 moosh user-assign-system-role gestorae gestora

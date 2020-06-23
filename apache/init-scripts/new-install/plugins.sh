@@ -42,8 +42,8 @@ echo >&2 "Plugins installed!"
 echo >&2 "Configuring plugins..."
 echo >&2 "Configuring configurable_reports..."
 set +x # to get info 
-moosh config-set cron_hour 0
-moosh config-set cron_minute 0
+moosh config-set cron_hour 1 block_configurable_reports
+moosh config-set cron_minute 15 block_configurable_reports
 moosh config-set crrepository jleyva/moodle-configurable_reports_repository block_configurable_reports
 moosh config-set dbhost ${MOODLE_DB_HOST} block_configurable_reports
 moosh config-set dbname ${MOODLE_DB_NAME} block_configurable_reports
@@ -64,10 +64,6 @@ moosh config-set jitsi_sesionname 0,1,2
 moosh config-set jitsi_domain meet.jit.si
 moosh config-set jitsi_watermarklink https://jitsi.org
 moosh config-set jitsi_channellastcam 4
-
-
-echo >&2 "Configuring grades..."
-moosh config-set gradepointdefault 10
 
 echo >&2 "Configuring h5p..."
 moosh config-set enable_save_content_state 1 mod_hvp
@@ -94,6 +90,9 @@ moosh config-set modalresources pdf,url,html format_tiles
 moosh config-set showprogresssphototiles 0 format_tiles
 moosh config-set showseczerocoursewide 1 format_tiles
 moosh config-set allowphototiles 1 format_tiles
+
+echo >&2 "Configuring block_xp..."
+moosh config-set blocktitle "¡Sube\ de\ nivel\!" block_xp
 
 set -x
 echo >&2 "Plugins configurated!"
