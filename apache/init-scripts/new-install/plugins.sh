@@ -22,7 +22,6 @@ echo >&2 "Plugin list downloaded!"
 
 echo >&2 "Installing plugins..."
 moosh plugin-install -d theme_moove
-moosh plugin-install -d theme_adaptable
 moosh plugin-install -d format_tiles
 moosh plugin-install -d mod_jitsi
 moosh plugin-install -d mod_hvp
@@ -30,6 +29,7 @@ moosh plugin-install -d block_xp
 moosh plugin-install -d availability_xp
 moosh plugin-install -d report_benchmark
 moosh plugin-install -d booktool_wordimport
+moosh plugin-install -d local_mail
 # for moodle 3.8
 # moosh-plugin-install -d tool_opcache
 moosh plugin-install -d block_configurable_reports
@@ -93,6 +93,13 @@ moosh config-set allowphototiles 1 format_tiles
 
 echo >&2 "Configuring block_xp..."
 moosh config-set blocktitle "¡Sube\ de\ nivel\!" block_xp
+
+echo >&2 "Configuring local_mail..."
+moosh config-set maxfiles 5 local_mail
+moosh config-set maxbytes 2097152 local_mail
+moosh config-set enablebackup 1 local_mail
+moosh config-set legacynav 0 local_nav
+moosh role-update-capability student local/mail:mailsamerole prevent 1
 
 set -x
 echo >&2 "Plugins configurated!"

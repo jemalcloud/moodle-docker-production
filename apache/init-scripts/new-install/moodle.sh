@@ -138,7 +138,8 @@ moosh config-set gradepointdefault 10
 # themes
 moosh config-set allowthemechangeonurl 1
 
-# Change language configuration
+# Disabling messaging
+moosh config-set messaging 0
 
 # Site Policyhandler
 moosh config-set sitepolicyhandler tool_policy
