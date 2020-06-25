@@ -109,7 +109,7 @@ moosh config-set block_online_users_timetosee 10
 
 # import categories and courses
 echo >&2 "Importing categories and courses..."
-/init-scripts/${INSTALL_TYPE}/import_${SCHOOL_TYPE}_categories_and_courses.sh
+#/init-scripts/${INSTALL_TYPE}/import_${SCHOOL_TYPE}_categories_and_courses.sh
 
 # statistics
 moosh config-set enablestats 1
