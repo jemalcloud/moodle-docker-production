@@ -6,7 +6,9 @@ name: Sync-moodle-docker-deploy
 
 on:
   push:
-    branches: [master]
+    branches-ignore:
+      - "**"
+    # branches: [master]
     paths:
       - "init-scripts/**"
 jobs:
@@ -24,5 +26,5 @@ jobs:
         with:
           source-directory: "init-scripts"
           destination-github-username: "catedu"
-          destination-repository-name: "moodle-docker-deploy"
+          destination-repository-name: "init-scripts"
           user-email: juandacorreo@gmail.com
