@@ -164,3 +164,7 @@ moosh role-update-capability gestora block/starredcourses:myaddinstance allow 1
 moosh role-update-capability gestora block/mentees:myaddinstance allow 1
 moosh config-set dporoles 9 tool_dataprivacy
 moosh user-assign-system-role gestorae gestora
+
+# Creating moodle-asesoria-admin
+moosh user-create --password ${ASESORIA_PASSWORD} --email ${ASESORIA_MAIL} --digest 2 --city Aragón --country ES --firstname Asesoría --lastname Aeducar asesoria
+moosh config-set siteadmins 2,4
