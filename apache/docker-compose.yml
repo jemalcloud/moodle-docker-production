@@ -29,6 +29,8 @@ services:
       MOODLE_MANAGER: "${MOODLE_MANAGER}"
       INSTALL_TYPE: "${INSTALL_TYPE}"
       SCHOOL_TYPE: "${SCHOOL_TYPE}"
+      ASESORIA_PASSWORD: "${ASESORIA_PASSWORD}"
+      ASESORIA_EMAIL: "${ASESORIA_EMAIL}"
     networks:
       - frontend
       - backend
