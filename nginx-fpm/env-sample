@@ -32,6 +32,9 @@ CRON_BROWSER_PASS=cronpass
 MOODLE_MANAGER=mail@manageres
 MANAGER_PASSWORD=myverystrongpass
 
+ASESORIA_PASSWORD=myverystrongpass
+ASESORIA_EMAIL=asesor@aeducar.es
+
 # Installation specific
 INSTALL_TYPE=new-install
 SCHOOL_TYPE=CPI
