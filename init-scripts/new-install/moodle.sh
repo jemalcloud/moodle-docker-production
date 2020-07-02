@@ -109,7 +109,7 @@ moosh config-set block_online_users_timetosee 10
 
 # import categories and courses
 echo >&2 "Importing categories and courses..."
-#/init-scripts/${INSTALL_TYPE}/import_${SCHOOL_TYPE}_categories_and_courses.sh
+/init-scripts/${INSTALL_TYPE}/import_${SCHOOL_TYPE}_categories_and_courses.sh
 
 # statistics
 moosh config-set enablestats 1
@@ -166,5 +166,5 @@ moosh config-set dporoles 9 tool_dataprivacy
 moosh user-assign-system-role gestorae gestora
 
 # Creating moodle-asesoria-admin
-moosh user-create --password ${ASESORIA_PASSWORD} --email ${ASESORIA_MAIL} --digest 2 --city Aragón --country ES --firstname Asesoría --lastname Aeducar asesoria
+moosh user-create --password ${ASESORIA_PASSWORD} --email ${ASESORIA_EMAIL} --digest 2 --city Aragón --country ES --firstname Asesoría --lastname Aeducar asesoria
 moosh config-set siteadmins 2,4
