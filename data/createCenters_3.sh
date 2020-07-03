@@ -74,7 +74,7 @@ createMoodle.sh -l es -n "CEIP LA LAGUNA (Sariñena)" -t "CEIP" -u "https://ceip
 sleep 4m
 createMoodle.sh -l es -n "CRA DE ALTORRICÓN (Altorricon)" -t "CEIP" -u "https://craaltorricon.aeducar.es" "CRA DE ALTORRICÓN" 
 sleep 4m
-createMoodle.sh -l es -n "CRA Cerro de Santa Cruz" -t "CEIP" -u "https://crausedycubel.aeducar.es" "" 
+createMoodle.sh -l es -n "CRA Cerro de Santa Cruz (Cubel)" -t "CEIP" -u "https://crausedycubel.aeducar.es" "CRA Cerro de Santa Cruz" 
 sleep 4m
 createMoodle.sh -l es -n "CEIP BALTASAR GRACIÁN (Calatayud)" -t "CEIP" -u "https://colegiobaltasargracian.aeducar.es" "CEIP BALTASAR GRACIÁN" 
 sleep 4m
@@ -107,4 +107,3 @@ sleep 4m
 createMoodle.sh -l es -n "CEIP SAN BRAULIO (Zaragoza)" -t "CEIP" -u "https://ceipsanbraulio.aeducar.es" "CEIP SAN BRAULIO" 
 sleep 4m
 createMoodle.sh -l es -n "CEIP ANTONIO BELTRÁN MARTÍNEZ (Zaragoza)" -t "CEIP" -u "https://cpantoniobeltran.aeducar.es" "CEIP ANTONIO BELTRÁN MARTÍNEZ" 
-sleep 4m
