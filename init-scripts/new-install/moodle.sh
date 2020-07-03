@@ -62,8 +62,8 @@ moosh config-set airnotifierappname commoodlemoodlemobile
 
 # Set languages
 echo >&2 "Configuring languages..."
-# moosh config-set doclang es
-# moosh config-set lang es
+moosh config-set doclang es
+moosh config-set lang es
 moosh config-set country ES
 moosh config-set timezone Europe/Madrid
 
@@ -179,3 +179,15 @@ moosh role-update-contextlevel --system-off familiar
 moosh role-update-contextlevel --category-off familiar
 moosh role-update-contextlevel --activity-off familiar
 moosh role-update-contextlevel --block-off familiar
+moosh role-update-capability familiar moodle/user:readuserblogs allow 1
+moosh role-update-capability familiar moodle/user:readuserposts allow 1
+moosh role-update-capability familiar moodle/user:viewuseractivitiesreport allow 1
+moosh role-update-capability familiar moodle/user:editprofile allow 1
+moosh role-update-capability familiar tool/policy:acceptbehalf allow 1
+
+echo >&2 "Running dangerous sql commads... " $'\360\237\222\243'$'\360\237\222\243'$'\360\237\222\243'$'\360\237\222\243'$'\360\237\222\243' 
+echo >&2 "The first one will work... "
+moosh sql-run "INSERT INTO mdl_role_allow_assign(roleid,allowassign) VALUES(9,10)"
+
+echo >&2 "The second one... I don't think so"
+moosh sql-run "INSERT INTO mdl_tool_policy_versions (id, name, type, audience, archived, usermodified, timecreated, timemodified, policyid, agreementstyle, optional, revision, summary, summaryformat, content, contentformat) VALUES (1, 'Política de privacidad', 1, 0, 0, 2, 1593771049, 1593771049, 1, 1, 0, '', '<p><div>Política de privacidad de la plataforma Aeducar. Gobierno de Aragón.</div></p>', 1, '<p><div>Los datos recogidos en este formulario serán incorporados y tratados en el Registro de Actividades de</div><div>Tratamiento de la Dirección General de Innovación y Formación Profesional “PROGRAMAS FORMACIÓN</div><div>PROFESORADO”. Sus datos personales serán tratados con el fin exclusivo de gestión de programas de</div><div>formación permanente de la Dirección General de Innovación y Formación Profesional, y del Registro de&nbsp;<span style='font-size: 0.9375rem;'>formación permanente del profesorado, abarcando las reclamaciones en vía administrativa y judicial, así&nbsp;</span><span style='font-size: 0.9375rem;'>como solicitudes en materia de transparencia.</span></div><div><span style='font-size: 0.9375rem;'><br></span></div><div>El órgano responsable del Registro de Actividades de Tratamiento es la Dirección General de Innovación y&nbsp;<span style='font-size: 0.9375rem;'>Formación Profesional. La licitud del tratamiento de los datos es necesaria para el cumplimiento de una&nbsp;</span><span style='font-size: 0.9375rem;'>obligación legal aplicable al responsable del tratamiento. Estos datos no se cederán a terceros, salvo&nbsp;</span><span ^Cyle='font-size: 0.9375rem;'>obligación legal.</span></div><div><span style='font-size: 0.9375rem;'><br></span></div><div>Podrá Ud. ejercer sus derechos de acceso, rectificación, supresión y portabilidad de datos de carácter</div><div>personal, o de limitación y oposición a su tratamiento,   así como a no ser objeto de decisiones</div><div>individualizadas automatizadas, a través de la sede electrónica de la Administración de la Comunidad</div><div>Autónoma de Aragón con los formularios normalizados disponibles. Podrá consultar información adicional&nbsp;<span style='font-size: 0.9375rem;'>y   detallada   en   el   Registro   de   Actividades   de   Tratamiento   del   Gobierno   de   Aragón</span></div><div><a href='https://aplicaciones.aragon.es/notif_lopd_priv/searchTreatmentFiles.action' target='_blank'>https://aplicaciones.aragon.es/notif_lopd_priv/searchTreatmentFiles.action</a><span style='font-size: 0.9375rem;'>,   identificando   la   siguiente</span></div><div>actividad de tratamiento:&nbsp;<span style='font-size: 0.9375rem;'>“</span><span style='font-size: 0.9375rem;'>PROGRAMAS FORMACIÓN PROFESORADO'</span><span style='font-size: 0.9375rem;'>.</span></div><br></p>', 1);"
