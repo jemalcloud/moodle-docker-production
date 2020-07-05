@@ -22,7 +22,7 @@ const pathName = writeStream.path;
 gsjson({
   spreadsheetId: '1SQjFfnTrMeGh281k0fAcDIL5oK_Kc2BR91Upr8kUU0E',
   credentials: './credentials.json',
-  worksheet: 'junio'
+  worksheet: 'solicitudes'
 })
   .then(function (jsonData) {
     const centros = jsonData
