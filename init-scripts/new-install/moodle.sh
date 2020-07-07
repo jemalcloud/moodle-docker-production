@@ -179,6 +179,8 @@ moosh role-update-contextlevel --system-off familiar
 moosh role-update-contextlevel --category-off familiar
 moosh role-update-contextlevel --activity-off familiar
 moosh role-update-contextlevel --block-off familiar
+moosh role-update-capability familiar moodle/user:viewalldetails allow 1
+moosh role-update-capability familiar moodle/user:viewdetails allow 1
 moosh role-update-capability familiar moodle/user:readuserblogs allow 1
 moosh role-update-capability familiar moodle/user:readuserposts allow 1
 moosh role-update-capability familiar moodle/user:viewuseractivitiesreport allow 1
