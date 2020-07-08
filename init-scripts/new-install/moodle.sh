@@ -169,7 +169,7 @@ moosh user-assign-system-role gestorae gestora
 # Creating moodle-asesoria-admin
 echo >&2 "Creating moodle-manager gestorae and giving grants..."
 moosh user-create --password ${ASESORIA_PASSWORD} --email ${ASESORIA_EMAIL} --digest 2 --city Aragón --country ES --firstname Asesoría --lastname Aeducar asesoria
-moosh config-set siteadmins 2,4
+moosh config-set siteadmins 2,5
 
 # Creating parent role
 echo >&2 "Creating parent role and configuring it..."
