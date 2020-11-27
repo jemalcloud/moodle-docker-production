@@ -14,10 +14,10 @@ gsjson({
 })
   .then(function (jsonData) {
     const centros = jsonData
-      .filter((centro) => centro.desplieguePrevisto === 'desplegado' || centro.desplieguePrevisto === 'pendiente')
+      .filter((centro) => centro.estado === 'desplegado' || centro.estado === 'pendiente')
       .map((centro) => {
         console.log(centro)
-        const url = centro.desplieguePrevisto === 'desplegado' ? `https://${centro.gfp_url_solicitada}.aeducar.es` : ''
+        const url = centro.estado === 'desplegado' ? `https://${centro.gfp_url_solicitada}.aeducar.es` : ''
         const gestor = `${centro.gfp_nombre_gestor} ${centro.gfp_apellido1_gestor} ${centro.gfp_apellido2_gestor}`
         return { url, name: centro.gfp_centro_y_localidad, cp: centro.gfp_centro_formacion_ref, gestor, gestorEmail: centro.gfp_email_gestor }
       })

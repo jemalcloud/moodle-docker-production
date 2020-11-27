@@ -8,6 +8,7 @@ switch (myArgs[0]) {
   case '1':
   case '2':
   case '3':
+  case '4':
     var fileName = `createCenters_${myArgs[0]}.sh`
     console.log(`Data will be saved to ${fileName}`)
     break;
@@ -25,10 +26,11 @@ gsjson({
   worksheet: 'solicitudes'
 })
   .then(function (jsonData) {
+    console.log(jsonData)
     const centros = jsonData
-      .filter((centro) => centro.desplieguePrevisto !== 'desplegado')
+      .filter((centro) => centro.estado !== 'desplegado')
       .filter((centro) => !!centro.gfp_url_solicitada)
-      .filter((centro) => centro.servidor == myArgs[0])
+      .filter((centro) => centro.server == myArgs[0])
       .map((centro) => {
         const url = `https://${centro.gfp_url_solicitada}.aeducar.es`
         const shortName = centro.gfp_centro_y_localidad.substring(0, centro.gfp_centro_y_localidad.indexOf("(") - 1)
