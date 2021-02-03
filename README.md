@@ -62,7 +62,7 @@ Open browser webpage: http://localhost (be patient)
   
 ## How to create a new image
 
-- Create a new directory with the new Moodle version. For example for Moodlle 3.9.0 and using nginx-fpm (best choice):
+- Create a new directory with the selected Moodle version. For example for Moodlle 3.9.0 and using nginx-fpm (best choice):
 
 ```
 cd ${REPO_DIR}
