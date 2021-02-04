@@ -59,6 +59,18 @@ Open browser webpage: http://localhost (be patient)
   MOODLE_URL=https://localhost
   SSL_PROXY=true
   ```
+  
+## How to create a new image
+
+- Create a new directory with the selected Moodle version. For example for Moodlle 3.9.0 and using nginx-fpm (best choice):
+
+```
+cd ${REPO_DIR}
+cp -r nginx-fpm/3.8.3 nginx-fpm/3.9.0
+```
+
+- Modify files (Dockerfile, php extensions file, entrypoint...)
+- Commit and push so Docker Hub knows about the change to build new public image
 
 ## Contributions
 
