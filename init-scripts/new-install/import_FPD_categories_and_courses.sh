@@ -46,9 +46,9 @@ moosh category-create -p 40 -v 1 -d "SSC303" "Integración Social"
 moosh category-create -p 0 -v 1 "Proyectos de trabajo"
 moosh category-create -p 0 -v 1 "Sala de Profesorado"
 # courses
-moosh course-restore /init-scripts/mbzs/3-biologia-primero-eso-ies.mbz 3
-moosh course-config-set course 2 shortname biologia-primero-eso
-moosh course-config-set course 2 fullname "Biología y Geología 1º"
+# moosh course-restore /init-scripts/mbzs/3-biologia-primero-eso-ies.mbz 3
+# moosh course-config-set course 2 shortname biologia-primero-eso
+# moosh course-config-set course 2 fullname "Biología y Geología 1º"
 
 # courses format configuration
 moosh course-config-set category 3 format topics
