@@ -70,7 +70,9 @@ cp -r nginx-fpm/3.8.3 nginx-fpm/3.9.0
 ```
 
 - Modify files (Dockerfile, php extensions file, entrypoint...)
+- Create a workflow yml file for your version at .github/workflows
 - Commit and push so Docker Hub knows about the change to build new public image
+- if you create the workflow after pushing changes you will have to modify a file, commit and push again in order to trigger the workflow
 
 ## Contributions
 
