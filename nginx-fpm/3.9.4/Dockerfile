@@ -47,10 +47,10 @@ RUN { \
 
 
 RUN	echo "Installing moodle"; \
-	curl -o moodle.tar.gz -fSL "https://download.moodle.org/download.php/stable39/moodle-${VERSION}.tgz"; \
+	curl -o moodle.tgz -fSL "https://download.moodle.org/download.php/direct/stable39/moodle-${VERSION}.tgz"; \
 	mkdir /usr/src/moodle; \
-	tar -xf moodle.tar.gz -C /usr/src/moodle --strip 1; \
-	rm moodle.tar.gz
+	tar -xf moodle.tgz -C /usr/src/moodle --strip 1; \
+	rm moodle.tgz
 
 RUN	echo "Installing composer"; \
 	curl -o composer.phar -fSL "https://github.com/composer/composer/releases/download/${COMPOSER_VERSION}/composer.phar"; \
