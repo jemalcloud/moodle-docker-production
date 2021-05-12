@@ -72,7 +72,7 @@ RUN	echo "Installing mooosh"; \
 RUN	echo "Installing unoconv"; \
 	apt-get update && apt-get install -y; \
 	mkdir /var/www/.config; \
-	chown -R www-data:www-data /var/www/.config; 
+	chown -R www-data:www-data /var/www/.config
 	
 RUN curl -o dockerize.tar.gz -fSL "https://github.com/jwilder/dockerize/releases/download/${DOCKERIZE_VERSION}/dockerize-linux-amd64-${DOCKERIZE_VERSION}.tar.gz"; \
 	tar -xf dockerize.tar.gz -C /usr/local/bin; \
