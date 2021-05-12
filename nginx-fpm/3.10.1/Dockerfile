@@ -21,7 +21,7 @@ RUN /tmp/php-extensions.sh
 
 # set recommended opcache settings 
 # see https://www.php.net/manual/en/opcache.installation.php
-## see https://docs.moodle.org/39/en/OPcache
+## see https://docs.moodle.org/310/en/OPcache
 RUN { \
 	echo 'opcache.memory_consumption=1024'; \
 	echo 'opcache.interned_strings_buffer=8'; \
