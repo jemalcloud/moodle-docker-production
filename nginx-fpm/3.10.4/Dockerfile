@@ -64,6 +64,7 @@ RUN	echo "Installing mooosh"; \
 	composer install -d /usr/src/moosh; \
 	ln -s /usr/src/moosh/moosh.php /usr/local/bin/moosh; \
 	rm moosh.tar.gz
+# Añadir instalación de unoconv aquí
 
 RUN curl -o dockerize.tar.gz -fSL "https://github.com/jwilder/dockerize/releases/download/${DOCKERIZE_VERSION}/dockerize-linux-amd64-${DOCKERIZE_VERSION}.tar.gz"; \
 	tar -xf dockerize.tar.gz -C /usr/local/bin; \
