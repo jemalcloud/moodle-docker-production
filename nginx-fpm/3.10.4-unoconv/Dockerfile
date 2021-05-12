@@ -74,7 +74,7 @@ RUN	echo "Installing unoconv"; \
 	# apt-get update && apt-get install -y; \
 	apt-get update; \
 	apt-cache policy unoconv; \
-	apt-get install unoconv; \
+	apt-get -y install unoconv; \
 	mkdir /var/www/.config; \
 	chown -R www-data:www-data /var/www/.config
 	
