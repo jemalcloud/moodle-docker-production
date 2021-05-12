@@ -62,11 +62,11 @@ RUN	echo "Installing mooosh"; \
 	# mkdir /usr/src/moosh; \
 	# tar -xf moosh.tar.gz -C /usr/src/moosh --strip 1; \
 	# composer install -d /usr/src/moosh; \
-	cd /usr/src
-	git clone git://github.com/tmuras/moosh.git
-	cd moosh
-	composer install
-	ln -s /usr/src/moosh/moosh.php /usr/local/bin/moosh; \
+	cd /usr/src; \
+	git clone git://github.com/tmuras/moosh.git; \ 
+	cd moosh; \
+	composer install; \
+	ln -s /usr/src/moosh/moosh.php /usr/local/bin/moosh
 	# rm moosh.tar.gz
 
 RUN	echo "Installing unoconv"; \
