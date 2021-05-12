@@ -60,18 +60,15 @@ RUN	echo "Installing composer"; \
 RUN	echo "Installing moosh"; \
 	# curl -o moosh.tar.gz -fSL "https://github.com/tmuras/moosh/archive/${MOOSH_VERSION}.tar.gz"; \
 	# mkdir /usr/src/moosh; \
+	# tar -xf moosh.tar.gz -C /usr/src/moosh --strip 1; \
+	# composer install -d /usr/src/moosh; \
+	# ln -s /usr/src/moosh/moosh.php /usr/local/bin/moosh; \
+	# rm moosh.tar.gz
 	cd /usr/src; \
-	curl -o moosh.tar.gz -fSL "https://github.com/tmuras/moosh/archive/refs/tags/0.36.tar.gz"; \
-	tar -xf moosh.tar.gz; \
-	cd moosh-0.36; \
+	git clone https://github.com/tmuras/moosh.git; \ 
+	cd moosh; \
 	composer install; \
-	# cd /usr/src; \
-	# git clone git://github.com/tmuras/moosh.git; \ 
-	# cd moosh; \
-	# composer install; \
-	ln -s /usr/src/moosh-0.36/moosh.php /usr/local/bin/moosh; \
-	cd ..; \
-	rm moosh.tar.gz
+	ln -s /usr/src/moosh/moosh.php /usr/local/bin/moosh
 
 RUN	echo "Installing unoconv"; \
 	apt-get update && apt-get install -y; \
