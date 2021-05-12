@@ -71,7 +71,10 @@ RUN	echo "Installing moosh"; \
 	ln -s /usr/src/moosh/moosh.php /usr/local/bin/moosh
 
 RUN	echo "Installing unoconv"; \
-	apt-get update && apt-get install -y; \
+	# apt-get update && apt-get install -y; \
+	apt-get update; \
+	apt-cache policy unoconv; \
+	apt-get install unoconv; \
 	mkdir /var/www/.config; \
 	chown -R www-data:www-data /var/www/.config
 	

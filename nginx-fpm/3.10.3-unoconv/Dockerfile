@@ -57,18 +57,26 @@ RUN	echo "Installing composer"; \
 	chmod +x ./composer.phar; \
 	mv ./composer.phar /usr/local/bin/composer
 
-RUN	echo "Installing mooosh"; \
-	curl -o moosh.tar.gz -fSL "https://github.com/tmuras/moosh/archive/${MOOSH_VERSION}.tar.gz"; \
-	mkdir /usr/src/moosh; \
-	tar -xf moosh.tar.gz -C /usr/src/moosh --strip 1; \
-	composer install -d /usr/src/moosh; \
-	ln -s /usr/src/moosh/moosh.php /usr/local/bin/moosh; \
-	rm moosh.tar.gz
+RUN	echo "Installing moosh"; \
+	# curl -o moosh.tar.gz -fSL "https://github.com/tmuras/moosh/archive/${MOOSH_VERSION}.tar.gz"; \
+	# mkdir /usr/src/moosh; \
+	# tar -xf moosh.tar.gz -C /usr/src/moosh --strip 1; \
+	# composer install -d /usr/src/moosh; \
+	# ln -s /usr/src/moosh/moosh.php /usr/local/bin/moosh; \
+	# rm moosh.tar.gz
+	cd /usr/src; \
+	git clone https://github.com/tmuras/moosh.git; \ 
+	cd moosh; \
+	composer install; \
+	ln -s /usr/src/moosh/moosh.php /usr/local/bin/moosh
 
-RUN 	echo "Installing unoconv"; \
-	apt-get update && apt-get install -y; \
+RUN	echo "Installing unoconv"; \
+	# apt-get update && apt-get install -y; \
+	apt-get update; \
+	apt-cache policy unoconv; \
+	apt-get install unoconv; \
 	mkdir /var/www/.config; \
-    	chown -R www-data:www-data /var/www/.config; 
+    chown -R www-data:www-data /var/www/.config
 
 RUN curl -o dockerize.tar.gz -fSL "https://github.com/jwilder/dockerize/releases/download/${DOCKERIZE_VERSION}/dockerize-linux-amd64-${DOCKERIZE_VERSION}.tar.gz"; \
 	tar -xf dockerize.tar.gz -C /usr/local/bin; \
