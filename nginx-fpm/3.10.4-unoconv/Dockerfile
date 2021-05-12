@@ -59,17 +59,17 @@ RUN	echo "Installing composer"; \
 
 RUN	echo "Installing moosh"; \
 	# curl -o moosh.tar.gz -fSL "https://github.com/tmuras/moosh/archive/${MOOSH_VERSION}.tar.gz"; \
-	mkdir /usr/src/moosh; \
+	# mkdir /usr/src/moosh; \
 	cd /usr/src; \
 	curl -o moosh.tar.gz -fSL "https://github.com/tmuras/moosh/archive/refs/tags/0.36.tar.gz"; \
 	tar -xf moosh.tar.gz; \
-	cd moosh; \
+	cd moosh-0.36; \
 	composer install; \
 	# cd /usr/src; \
 	# git clone git://github.com/tmuras/moosh.git; \ 
 	# cd moosh; \
 	# composer install; \
-	ln -s /usr/src/moosh/moosh.php /usr/local/bin/moosh; \
+	ln -s /usr/src/moosh-0.36/moosh.php /usr/local/bin/moosh; \
 	cd ..; \
 	rm moosh.tar.gz
 
