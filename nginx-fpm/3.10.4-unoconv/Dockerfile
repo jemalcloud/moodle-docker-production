@@ -77,6 +77,10 @@ RUN	echo "Installing unoconv"; \
 	apt-get -y install unoconv; \
 	mkdir /var/www/.config; \
 	chown -R www-data:www-data /var/www/.config
+
+RUN	echo "Installing expect"; \
+	apt-get update; \
+	apt-get -y install expect; \
 	
 RUN curl -o dockerize.tar.gz -fSL "https://github.com/jwilder/dockerize/releases/download/${DOCKERIZE_VERSION}/dockerize-linux-amd64-${DOCKERIZE_VERSION}.tar.gz"; \
 	tar -xf dockerize.tar.gz -C /usr/local/bin; \
