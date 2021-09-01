@@ -8,7 +8,7 @@ declare MOODLE_DATA_BACKUPS=/var/www/moodledata/repository/backups
 # process initializer files, based on file extensions
 process_init_files() {
 	echo
-	
+
 	local f
 	for f; do
 		case "$f" in
@@ -22,7 +22,7 @@ process_init_files() {
 					echo >&2 "$f skipped, no x permission"
 				fi
 				;;
-			*.php) 
+			*.php)
 				echo >&2 "$f executing..."
 				php $f
 				echo >&2 "$f executed!"
