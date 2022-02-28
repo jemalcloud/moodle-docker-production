@@ -87,6 +87,7 @@ RUN curl -o dockerize.tar.gz -fSL "https://github.com/jwilder/dockerize/releases
 	rm dockerize.tar.gz
 
 COPY moodle-config.php /usr/src/moodle/config.php
+
 COPY docker-entrypoint.sh /usr/local/bin/
 
 # remove plugins installation better a init dir where scripts can be executed if exists, from entrypoint
