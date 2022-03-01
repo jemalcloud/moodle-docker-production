@@ -35,7 +35,7 @@ apt-get install -y --no-install-recommends apt-transport-https \
     $PACKAGES_LDAP
 
 #Install libicu63 for debian10. 
-dpkg -i libicu63_63.1-6+deb10u1_amd64.deb
+dpkg -i /tmp/libicu63_63.1-6+deb10u1_amd64.deb
 apt-get -f install
 
 
