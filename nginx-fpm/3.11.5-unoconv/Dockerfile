@@ -16,7 +16,7 @@ EXPOSE 80
 ARG DEBIAN_FRONTEND=noninteractive
 
 ## extensions based on https://github.com/moodlehq/moodle-php-apache/blob/master/Dockerfile
-COPY libicu63_63.1-6+deb10u1_amd64.deb /tmp
+# COPY libicu63_63.1-6+deb10u1_amd64.deb /tmp
 COPY php-extensions.sh /tmp
 RUN /tmp/php-extensions.sh
 

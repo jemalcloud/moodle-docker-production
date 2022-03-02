@@ -16,7 +16,7 @@ PACKAGES_POSTGRES="libpq5"
 PACKAGES_MYMARIA="libmariadb3 mariadb-client"
 
 # Packages for other Moodle runtime dependenices.
-PACKAGES_RUNTIME="ghostscript libaio1 libcurl4 libgss3 libmcrypt-dev libxml2 libxslt1.1 \
+PACKAGES_RUNTIME="ghostscript libaio1 libcurl4 libgss3 libicu67 libmcrypt-dev libxml2 libxslt1.1 \
   libzip-dev locales sassc unixodbc unzip zip git sudo"
 
 # Packages for Memcached.
@@ -35,8 +35,8 @@ apt-get install -y --no-install-recommends apt-transport-https \
     $PACKAGES_LDAP
 
 #Install libicu63 for debian10. 
-dpkg -i /tmp/libicu63_63.1-6+deb10u1_amd64.deb
-apt-get -f install
+# dpkg -i /tmp/libicu63_63.1-6+deb10u1_amd64.deb
+# apt-get -f install
 
 
 
