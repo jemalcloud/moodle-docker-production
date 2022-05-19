@@ -3,7 +3,7 @@ FROM php:7.3-fpm
 LABEL MAINTAINER juanda <juandacorreo@gmail.com>
 
 ARG VERSION=3.11.7
-ARG MOOSH_VERSION=0.36
+# ARG MOOSH_VERSION=0.36 varible not used, always latest moosh version.
 ARG COMPOSER_VERSION=1.10.6
 ENV DOCKERIZE_VERSION v0.6.1
 
@@ -51,7 +51,7 @@ RUN	echo "Installing moodle"; \
 	curl -o moodle.tgz -fSL "https://download.moodle.org/download.php/stable311/moodle-${VERSION}.tgz"; \
 	mkdir /usr/src/moodle; \
 	tar -xf moodle.tgz -C /usr/src/moodle --strip 1; \
-	rm moodle.tgz
+	# rm moodle.tgz comento temporalmente para ver si descarga moodle.tgz
 
 RUN	echo "Installing composer"; \
 	curl -o composer.phar -fSL "https://github.com/composer/composer/releases/download/${COMPOSER_VERSION}/composer.phar"; \
