@@ -50,10 +50,8 @@ RUN { \
 RUN	echo "Installing moodle"; \
 	curl -o moodle.tgz -fSL "https://download.moodle.org/download.php/direct/stable311/moodle-${VERSION}.tgz"; \
 	mkdir /usr/src/moodle; \
-	tar -xf moodle.tgz -C /usr/src/moodle --strip 1;
-
-	# tar -xf moodle.tgz -C /usr/src/moodle --strip 1; \
-	# rm moodle.tgz comento temporalmente para ver si descarga moodle.tgz
+	tar -xf moodle.tgz -C /usr/src/moodle --strip 1; \
+	rm moodle.tgz
 
 RUN	echo "Installing composer"; \
 	curl -o composer.phar -fSL "https://github.com/composer/composer/releases/download/${COMPOSER_VERSION}/composer.phar"; \
