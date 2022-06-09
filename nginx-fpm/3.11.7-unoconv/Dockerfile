@@ -59,12 +59,6 @@ RUN	echo "Installing composer"; \
 	mv ./composer.phar /usr/local/bin/composer
 
 RUN	echo "Installing moosh"; \
-	# curl -o moosh.tar.gz -fSL "https://github.com/tmuras/moosh/archive/${MOOSH_VERSION}.tar.gz"; \
-	# mkdir /usr/src/moosh; \
-	# tar -xf moosh.tar.gz -C /usr/src/moosh --strip 1; \
-	# composer install -d /usr/src/moosh; \
-	# ln -s /usr/src/moosh/moosh.php /usr/local/bin/moosh; \
-	# rm moosh.tar.gz
 	cd /usr/src; \
 	git clone https://github.com/tmuras/moosh.git; \ 
 	cd moosh; \
