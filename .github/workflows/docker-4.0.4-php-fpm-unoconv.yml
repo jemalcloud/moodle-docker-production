@@ -22,7 +22,7 @@ jobs:
       - name: Publish to Registry
         uses: elgohr/Publish-Docker-Github-Action@master
         with:
-          name: cateduac/moodle
+          name: cloudsheger/moodle
           username: ${{ secrets.DOCKER_HUB_USER }}
           password: ${{ secrets.DOCKER_HUB_PASSWORD }}
           context: "nginx-fpm/4.0.4-unoconv"
