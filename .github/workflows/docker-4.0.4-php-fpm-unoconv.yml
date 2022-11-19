@@ -6,7 +6,7 @@ name: Publish Docker 4.0.4-php-fpm-unoconv
 # events but only for the master branch
 on:
   push:
-    branches: [master]
+    branches: [jemalcloud-patch-1]
     paths:
       - "nginx-fpm/4.0.4-unoconv/**"
 
@@ -18,7 +18,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@master
+      - uses: actions/checkout@jemalcloud-patch-1
       - name: Publish to Registry
         uses: elgohr/Publish-Docker-Github-Action@master
         with:
